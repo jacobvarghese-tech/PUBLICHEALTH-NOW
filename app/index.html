@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pattern Check — unusual Medicare billing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="eyebrow">Congressional App Challenge 2026</p>
+      <h1>Pattern Check</h1>
+      <p class="purpose">Pattern Check ranks Medicare billers whose public billing for a watched service is unusually concentrated, fast-growing, or high-charged compared with other billers of the same code.</p>
+    </div>
+    <p class="audience">For students, reporters, and anyone reading a public Medicare file. A high score is a resemblance to an unusual pattern. It is not a fraud finding.</p>
+  </header>
+
+  <section class="notice" id="gate-notice"></section>
+
+  <section class="controls">
+    <label>Service
+      <select id="code"></select>
+    </label>
+    <label>Year
+      <select id="year"></select>
+    </label>
+    <label class="search">Find a biller
+      <input id="query" type="search" placeholder="Name, city, or NPI" autocomplete="off">
+    </label>
+    <label class="check">
+      <input id="known-only" type="checkbox">
+      Known sanctioned only
+    </label>
+  </section>
+
+  <section class="summary" id="summary"></section>
+
+  <div class="layout">
+    <section>
+      <h2>Ranked billers</h2>
+      <p class="hint">The table keeps the top 40 and any known sanctioned biller. Rank is against every biller of this code, not against the rows on screen. Click a row for the numbers.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Biller</th>
+              <th>National share</th>
+              <th>Growth</th>
+              <th>Charge vs median</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+    <aside id="detail">
+      <h2>How to read a row</h2>
+      <p>Pick a service and a year. The table uses only the public Medicare Physician &amp; Other Practitioners file. No patient-level claims are in this app.</p>
+    </aside>
+  </div>
+
+  <section class="examples">
+    <h2>Video example: epilepsy gene panel, code 81419</h2>
+    <p>Prince Laboratories and Reliable Results, the Deerfield Beach labs in the October 2026 Coffeezilla report, billed this code in 2023 and 2024. Open 2024 and search either name. The ranking puts both near the top on national share and on the share coming out of ZIP 33441. Neither lab is on the October 15, 2026 exclusion list. A high rank here is a pattern match, not a sanction.</p>
+    <div id="demo-cards"></div>
+  </section>
+
+  <footer>
+    <p>Scores are computed in the browser from <code>data/rankings.json</code>. Source notes and the label count are on the <a href="about.html">about page</a>.</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

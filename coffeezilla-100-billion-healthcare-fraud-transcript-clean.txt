@@ -1,0 +1,1036 @@
+TITLE: I Investigated $100 Billion in Healthcare Fraud
+CHANNEL: Coffeezilla
+URL: https://www.youtube.com/watch?v=9eWJISlh0fw
+VIDEO_ID: 9eWJISlh0fw
+PUBLISHED: 2026-10-12
+DURATION: 47:53
+TRANSCRIPT_TYPE: YouTube automatic English captions (en-orig), cleaned for agent reading
+SPEAKER_NOTE: Coffeezilla is the narrator. Other speakers are labeled only when the captions or the narration name them. Interview clips, news clips, and the sponsor bit are marked CLIP. Unnamed back-and-forth is marked SPEAKER.
+ASR_NOTE: Automatic captions misheard several proper nouns. Names below were corrected where the video's own reporting, on-screen context, or public records make the intended name clear. Residual uncertainty is listed at the end. Do not treat dollar figures, dates, or legal outcomes in this file as verified; check the sources the video cites.
+CORRECTED_NAMES:
+- Insign Group / Enzyme -> Ensign Group
+- PAX Group -> PACS Group
+- Linkare / Lindare / Lare / LINARE -> Lincare
+- Alamodine crime family -> Alameddine crime family
+- James Burkhard / Birkhart -> James Burkhart
+- Philip S forms -> Philip Esformes
+- Harshburgger -> Harshbarger (Robert Jr. and Rep. Diana)
+- Gavin Newsome -> Gavin Newsom; Governor Dantis -> Governor DeSantis
+- MCFUs -> MFCUs (Medicaid Fraud Control Units)
+- throughout Telesolutions MC -> through Telesolutions MC (preposition only; the name itself is unconfirmed)
+- 2018 Lincare False Claims Act settlement: captions said $5 billion; DOJ figure is $5.25 million (Aug 16, 2018). The 2006 kickback case was a separate $10 million OIG settlement.
+
+FORMAT: each turn is [mm:ss] SPEAKER: text. A line of equals signs starts a new section.
+
+========================================================================
+SECTION: Cold open
+========================================================================
+
+[00:00] COFFEEZILLA:
+Here's the video that ruined my life for six months.
+
+[00:02] CLIP (RFK Jr.):
+We lose, just in Medicaid and Medicare, a hundred billion dollars a year. And it's all
+just this really, you know, shocking, blatant fraud.
+
+[00:03] COFFEEZILLA:
+Yeah, I'll be honest. This blew my mind because a hundred billion is more money than
+I've uncovered in my entire career as the internet detective. We've had some, you know,
+big stories. Think FTX. 10 billion in fraud. You could fit 10 FTXs inside America's
+healthcare system every year, according to our government. And what's worse, they say
+it's shocking and blatant fraud. And that made me want to look at our health care system
+to find out, is the fraud really that bad? Why? And of course, who's doing it? Let's
+find out.
+
+========================================================================
+SECTION: Sponsor read
+========================================================================
+
+[00:45] SPONSOR READ:
+Copy. Copy. The merch. Copy. We're talking about the merch.
+
+[00:51] SPONSOR READ:
+Huh? Oh. Uh, sorry. Just read the pre-approved script.
+
+[00:55] SPONSOR READ:
+All right. Uh, action.
+
+[00:56] SPONSOR READ:
+All right, check this out, guys. Me on a shirt with Coffeezilla. To scale. He's really
+this short. I'll tell you, in real life, he's in the palm of my hands.
+
+[01:06] SPONSOR READ:
+Okay, cut. You know, you don't have a sense of sabotage. We're trying to sell some
+shirts.
+
+[01:12] SPONSOR READ:
+Listen, we're going to -- we'll fix it in post. We'll fix it in post. Just go to the
+shirt. I got it. I got it.
+
+[01:18] SPONSOR READ:
+Stick to the script. This Neo-Tokyo inspired design is called 'Fell for It Again', which
+is what you're going to be saying if you buy another YouTuber's merch.
+
+[01:27] SPONSOR READ:
+All right, another cut. I mean, you know,
+
+[01:30] SPONSOR READ:
+I couldn't help it.
+
+[01:32] SPONSOR READ:
+I'm just being honest. I'm being honest. I'll fix that in post, too. You know what? You
+hold the camera this time. I'll do it. I'll fix it all.
+
+[01:38] SPONSOR READ:
+All right. Whatever.
+
+[01:40] SPONSOR READ:
+Um, let's see. What do we got here? Got
+
+[01:43] SPONSOR READ:
+both my eyes are cameras, right?
+
+[01:44] SPONSOR READ:
+Yeah. I'm going to show you how hard it is to read a piece of paper.
+
+[01:47] SPONSOR READ:
+Whatever.
+
+[01:48] SPONSOR READ:
+All right. Get in a little tight shot of this one.
+
+[01:51] SPONSOR READ:
+Guys, the last shirt we have is the Designed by Humans one. It's Maxwell's 'internal
+shirt, by humans.' And uh if you keep talking, I'm going to have to cut you in post as
+well.
+
+[01:59] SPONSOR READ:
+My mom made me.
+
+[02:00] SPONSOR READ:
+So, I'm just going to ignore you for now. We also got posters, guys. We got these in
+frame rolled versions. I mean, look at them. They're gorgeous. They're gorgeous.
+
+[02:10] SPONSOR READ:
+Got the $10 million studio here. I'm loaded with posters. Okay. Looks great. And uh
+coffee shop. That's all at coffeezilla.com. I hope he's enjoyed having Maxwell as part
+of this because it may be his very last time.
+
+[02:24] SPONSOR READ:
+No, Dad. Please.
+
+[02:25] SPONSOR READ:
+Yeah, that's basically one more chance.
+
+[02:27] SPONSOR READ:
+Back to the video.
+
+========================================================================
+SECTION: Why healthcare fraud is hard to see
+========================================================================
+
+[02:31] COFFEEZILLA:
+So, in the $10 million studio, we're mostly known for investment fraud and get-rich
+quick scams. But healthcare fraud is different. Most people we catch are trying to get
+attention, but healthcare fraudsters are trying to avoid it. And so while normally we
+look at Birkin bags and Bugattis in healthcare fraud, we're looking for something else.
+We're not looking in the streets. We're looking in the spreadsheets. Luckily, the
+government has a bunch of data we're going to look through to make our analysis and try
+to find some red flags. Now, the most recent year of public data is 2024, and it tracks
+healthcare services by what are called CPT codes. That's just a unique number that tells
+you what test was done. And almost immediately, I noticed something was weird with the
+code 81419. That's the code for epilepsy genetic testing. Now, epilepsy is a horrible
+brain disorder that can be genetic. So, testing for those genes can obviously have
+clinical uses. But what I found was an explosion in the amount of genetic testing in
+just 3 years and a 1,000x increase in this CPT code. But what really caught my eye was
+that about a quarter of all those tests were happening in Florida, specifically in a
+shopping center in a tiny town called Deerfield Beach. Now, if anything would qualify as
+shocking blatant fraud, I think exploiting epilepsy genetic tests would certainly
+qualify, but I need more evidence. So, naturally, I reached out to the two labs in the
+shopping center to try to learn more. But quickly, I realized I just needed to show up
+in person for this, and what I found kind of surprised me. It's locked. I don't know
+what's going on here, guys. This is uh your Medicare dollars at work, unfortunately.
+I'll just read a few of the reviews for now. quote, "An unsolicited saliva kit arrived.
+Medicare policy number already filled in. There's nothing about this that looks legit."
+Here's another one. They were involved in a Parkinson's disease study. They wanted to
+have an oral swab submitted at no cost to me. Came from RNR Labs. I believe this is a
+scam. Unfortunately, now having been here myself, I'm inclined to believe the same
+thing. Again, we're here at operating hours for a very busy lab according to their
+billing records. And yet, we see nothing. Hi guys. Hey.
+
+========================================================================
+SECTION: Deerfield Beach site visit
+========================================================================
+
+[04:40] COFFEEZILLA:
+Do y'all work at uh Reliable Results lab?
+
+[04:43] SPEAKER (on site):
+No, they closed. We leased what used to be part of their lab.
+
+[04:47] COFFEEZILLA:
+Really?
+
+[04:48] SPEAKER (on site):
+What's going on?
+
+[04:49] COFFEEZILLA:
+We're doing a little investigation into reliable results. We believe they were
+committing fraud. So, let me just tell you a little bit about what we found. They did
+$30 million in 2024. They were the number two epilepsy genetic testing facility. The
+number one epilepsy genetic testing facility is right down the road. No, no, in the same
+shopping center.
+
+[05:09] COFFEEZILLA:
+Yeah.
+
+[05:10] COFFEEZILLA:
+And they also, we believe, shut down as well. All the reviews are they were basically
+farming out patients. They were calling people and saying, "We'll give you free
+testing," which is fraud. I mean, you can't just say, "Hey, medically unnecessary
+testing." So, have you heard anything about this? Have you heard any rumors about this?
+
+[05:24] SPEAKER (on site):
+We haven't heard any rumors or heard anything about it. I just know that we lease what
+used to be their space and that they're closed. That's pretty much all I know.
+
+[05:35] COFFEEZILLA:
+This used to be their space because I'm just wondering why such a successful business
+would close down.
+
+[05:39] SPEAKER (on site):
+When we took over the lease, they were already gone. So, we never interacted or saw the
+people from there.
+
+[05:46] COFFEEZILLA:
+Yeah. I've been trying to get a hold of them by email. They responded. They're denying
+all the allegations, etc. When did y'all take over the lease? I'm kind of curious when
+they closed up.
+
+[05:54] SPEAKER (on site):
+I don't know when they closed up, but I know we moved in about a month ago.
+
+[05:58] COFFEEZILLA:
+Okay. Because I started questioning them like 4 months ago.
+
+[06:01] SPEAKER (on site):
+Yeah, the timing seems strange. So, I reached out to the people who owned the building
+to learn more.
+
+[06:05] SPEAKER (on site):
+Looks like May 31st was the end.
+
+[06:08] COFFEEZILLA:
+The end of
+
+[06:09] SPEAKER (on site):
+the reliable results lab lease.
+
+[06:12] COFFEEZILLA:
+Gotcha.
+
+[06:13] SPEAKER (on site):
+Yeah, that's what it's looking like. I can't 100% confirm that, but based on context
+clues of what I saw, I would say that was the end.
+
+========================================================================
+SECTION: Prince Laboratories and the next-door lab
+========================================================================
+
+[06:23] COFFEEZILLA:
+Okay. From the best evidence we have, it seems like Reliable Results shut down their
+office a month after I contacted them, which seems suspicious. But what about the lab
+right down the road? All right, now we are in front of Prince Laboratories, which is
+literally the number one biller of epilepsy genetic testing in 2024. And uh right next
+to it, we also have one of the other big billers, a prize diagnostics, which has shut
+down. Uh you can see the state of these labs. You can see what kind of shape it's in.
+And I mean, I don't even know what this is. I don't How do you even describe this? Feels
+like some kind of metaphor for our Medicare system. This is where Prince Laboratories
+sat or used to sit. It's empty now. We've tried to knock. No one is there. They billed
+the government for $60 million in total. We just came to ask some questions. I asked
+them their owner via Instagram. They did not respond to me. So, we came in person. There
+is no one here. Yeah, Prince Labs was also gone, which is surprising given that both of
+these labs were incredibly successful businesses. Think about it. They were number one
+and number two in the country for epilepsy. But they also had multiple other codes they
+were number one and number two for. You can see them right here. And it's important to
+say these weren't old labs. They popped up in the last couple years. immediately became
+number one and number two in multiple tests and then just vanished after billing for $90
+million. Now, of course, I wanted an expert to weigh in on whether they thought this
+looked like fraud. One expert who wanted to remain anonymous said this stuff can be
+recognized by a 10-year-old and replied it was highly suspicious. But another expert
+explained how fraud at labs works generally.
+
+========================================================================
+SECTION: How lab fraud works
+========================================================================
+
+[08:11] ASHLEY ZARLING (lab compliance):
+My name's Ashley Zarling. I've spent 10 years in the laboratory administration and
+compliance space. So, a sales rep will come into a provider's office and they'll farm
+patients. They would come in and access all of those patients medical records and tell
+the provider what to order for which patients in order to increase volumes. It's
+happening every single day because there's laboratories across the nation that are
+looking to volume maximize without actually improving patient outcomes in a significant
+way. When you look at the dollar amounts associated, it is legitimately in the hundreds
+of millions, if not billions of dollars across multiple years.
+
+[08:12] COFFEEZILLA:
+Yeah, if you bill for medically unnecessary tests, that's obviously fraud. But remember,
+there still has to be a doctor somewhere in this chain to order these tests in the first
+place. And looking online at public complaints, people report a guy named Rasheed
+through Telesolutions MC to have ordered for reliable results. Now, I confirmed this by
+email, but Rasheed is linked to something called CTD Network LLC. I learned that that
+company had recently been linked to a $2.7 million indictment involving, guess what?
+Fraudulent genetic tests. I actually reached out to Rasheed. He didn't answer my
+questions about this, but I found someone who would. Someone who was familiar with CDT
+Network, reliable results, and Prince Labs. They were the perfect source. The only catch
+was they wanted to be anonymous. They were scared of the owners. quote, "I don't put it
+past them to hire hitmen." I thought this person was exaggerating at first until I
+learned more. My source walked me through the scheme. It worked through telemarketers
+who were paid up to $100,000 a month to cold call patients on Medicare, sign them up for
+free genetic testing, and then the telehealth docs in the back end would order the tests
+for the patients regardless of clinical necessity. then the labs would run the test and
+that's how you ended up with such crazy volumes coming out of a single shopping center.
+It's a telemarketing scheme and it also explains the comments we've seen. My source also
+alleged that Prince Laboratories and reliable results weren't just next to each other in
+a shopping center. They were actually related because on paper while these two labs were
+owned by different people underneath the surface there were connections. I found they
+were tied to the same Italian restaurant. their families had criminal histories with
+things like drugs, illegal telemarketing, money laundering, and then to my great
+annoyance, possible associations to the actual mafia. And the reason that last part is
+annoying is because the last YouTuber who talked about organized crime families got
+their house firebombed.
+
+========================================================================
+SECTION: Telemarketing scheme and ownership links
+========================================================================
+
+[10:43] CLIP (news, Friendlyjordies):
+Jordan Shanks has taken aim at dozens of public figures on his popular YouTube channel,
+Friendly Jordies. The Alameddine crime family was mentioned by Mr. Shanks in a video
+posted on his YouTube channel last year, 3 months before his house was allegedly
+firebombed.
+
+========================================================================
+SECTION: Why he stopped looking
+========================================================================
+
+[10:58] COFFEEZILLA:
+You know what? I have zero intention of joining that list. So, I decided, hey, I'm good.
+No more genetic tests. No 23 and me for this guy. I've seen enough. I packed my bags.
+You know, is the mafia involved? I can't tell you for sure because I stopped looking. I
+killed my curiosity before they did it for me. I mean, all I know for sure is that these
+two labs are linked. They ran a quarter of all epilepsy genetic tests in one year and
+took in $90 million and vanished to start an Italian restaurant. That seems fishy to me.
+So that's all I can do. The government hasn't intervened. I don't know why. But at this
+point, I was ready to move on. I wanted to get away from Florida as fast as possible.
+And that's when I started looking at healthcare fraud in California. And I learned
+things aren't much better over there when I found another awful case. Specifically, this
+Los Angeles office building. Now, it may not look impressive from the outside, but
+inside there have been over 100 hospice centers registered and they're making money hand
+over fist. And the only problem is when I say these hospices are inside the building,
+that's not exactly right because many of these businesses are virtually inside the
+building according to the owner. So they would come and or electronically open up a
+virtual office with us to have an address and to get their licenses because they have to
+have a license in order to do business in New York or California. Yeah, that's the owner
+of the building and he sells virtual offices. So when the news claims almost 200
+hospices have been registered there, they're actually talking mostly about virtual
+hospices, they don't actually have people there. And it's no wonder when you look at
+these patients, something doesn't add up either. As one CBS investigation found,
+
+========================================================================
+SECTION: Los Angeles hospice offices
+========================================================================
+
+[12:45] CLIP (CBS hospice investigation):
+a nurse wrote that a patient's family was satisfied with the care. But inspectors found
+no one from the hospice ever even visited that patient. A hospice social worker wrote
+about a family's grief when their loved one had passed, but there is no evidence the
+patient was actually dead.
+
+[13:05] COFFEEZILLA:
+Yeah, it seems like virtual hospices in virtual offices are making up virtual patients.
+But to this day, I should be clear, none of the hospices here have been charged. And
+again, we come back to our question, that's kind of weird. I mean, even the California
+state auditor says Los Angeles has indicators of large-scale fraud and likely fraudulent
+billing with hospice. But when you look at the companies, many have just never been
+investigated. And once again, this is a type of fraud I'd consider shocking and blatant,
+exploiting the elderly. And so to figure out why we allow all of this to happen, why
+we're not able to catch it for some reason, I think now we should just zoom out a bit
+and think more broadly about how people fool the government in the first place. Because
+there's really three big sources for healthcare fraud. Phantom pushed and padded fraud.
+First, phantom fraud bills the government for products and services that did not happen
+or were never delivered. Take for example urinary catheters. The government alleges
+billions of dollars were ordered that were never actually given to anyone. And you can
+see it in the data the fraud shows clearly as an explosion in demand and then the
+government announces some arrests. The second type of fraud is pushed. Meaning the test
+isn't medically necessary but is actually ordered for a patient. Think about this person
+who was offered a neurological test even though their personal doctor had not been
+contacted. So this is a telemarketer call, not actual medical necessity driving this
+test. And the government will pay for that, but only if it's caught first. And these
+types of medically unnecessary tests drive up costs massively, which is why they're a
+type of fraud. And the third way we call padded. That's when a product or service is
+delivered. It's needed medically necessary, but the fraudster bills the government for
+extra things on top of it to juice the amount the government spends in a way that's
+wasteful. So, it will take a test that will typically reimburse $600. And they will tack
+on CPT codes that are related but were not performed in order to reach $1,000 $2,000.
+And so on front-facing value, a test was performed. The diagnosis lines up with the test
+that was performed. A medical record is producable, but when you look one layer deep,
+you will see that not all of the codes on the claim were actually performed at the
+laboratory. They were just utilized to siphon money out of the government.
+
+========================================================================
+SECTION: Three kinds of fraud: phantom, pushed, padded
+========================================================================
+
+[15:31] COFFEEZILLA:
+Yeah, she's right. And those are the three big sources of fraud across our government
+healthcare system. I made the names alliterative just to make it easier to remember. In
+the real world, you'll hear jargon like up coding, unbundling, overcoding, tunneling,
+kickbacks, a bunch of fancy words that usually break down into the following. It either
+didn't happen, it was medically unnecessary, or they juiced the amount the government
+spent. But just know there's a lot of ways to cheat the government. And recently, that's
+become the subject of a national conversation. There's so much waste, fraud, and abuse.
+They're talking about it on Joe Rogan. And the question is, how are we going to stop it?
+This executive order in front of you uh will establish a new task force aimed at rooting
+out that fraud, returning potentially billions or tens of billions or even hundreds of
+billions of dollars to the American taxpayer. This is going to launch a whole of
+government approach uh to rooting out the very serious problem uh of fraud in in
+federally funded programs around the country.
+
+========================================================================
+SECTION: Federal anti-fraud task force
+========================================================================
+
+[16:27] COFFEEZILLA:
+Wow. We're starting an anti-fraud task force. The people who gave us Trump Coin are now
+stopping fraud and saving us money. I do have criticisms of this task force, but before
+I get there, I want to first start with some credit because I always want to applaud
+anti-fraud efforts wherever they come from. So, let's start with the good news. Since
+this announcement 4 months ago, there have been real anti-fraud cases in places like
+Minnesota where there was an autism fraud bust, in California, where there was a hospice
+fraud crackdown. And also the US federal government has been calling out ineffective
+Medicaid fraud control units or MFCUs, which I totally agree need to be discussed. If
+you didn't know, MFCUs are in every state. They're the state level way to crack down on
+Medicaid fraud. And the problem is in some states like Hawaii, they're kind of a
+complete joke. So local Hawaii News actually started talking about this back in 2022.
+This isn't totally new. And even at the time, the director was defending itself for not
+having a very good program.
+
+========================================================================
+SECTION: Medicaid Fraud Control Units
+========================================================================
+
+[17:28] CLIP (Hawaii news):
+In 2022, we reported the fraud unit was under scrutiny, generating almost zero
+prosecutions out of hundreds of complaints. The director of the office blamed the
+challenges of the pandemic, but promised improvement.
+
+[17:40] CLIP (Hawaii MFCU director):
+The fraud is out there. We just want to make sure we're doing everything we can to
+identify and hold people accountable for it. We have a lot in the pipe. I can assure you
+that.
+
+[17:49] COFFEEZILLA:
+Oh, okay. Okay. So, in 2022, we had a lot in the pipe, right? So, let's fast forward
+three years and see how they did, how much actually came out of the pipe, given that
+we're getting all these excuses.
+
+[17:59] COFFEEZILLA:
+But three years later, the pipeline has still produced zero prosecutions despite 388
+fraud investigations last year, 374 in 2024, and 368 investigations in 2023. They caught
+nobody. It was a goose egg. They did 1,000 investigations over three years and got no
+indictments, no convictions. That is unacceptable and I am glad it is being called out
+by our government.
+
+[18:27] CLIP (administration official):
+Not a single conviction because the administrators of the Hawaii program just don't take
+it seriously.
+
+[18:33] CLIP (anti-fraud task force, on California):
+Yeah, he's totally right. There's just no disagreeing with that. MFCUs are a huge part
+of anti-fraud control and if you're just investigating and never indicting anyone,
+that's a problem. And New York has also been singled out, too. They've done more
+indictments than Hawaii, which isn't hard, but they're still lagging behind. New York's
+Medicaid fraud control unit, the Trump administration, says they haven't prosecuted
+enough people. So, they're freezing millions of dollars through at least the end of
+September. Yeah. And to be honest, when you look at the data, you can plot it out how
+New York is doing compared to everyone else by their size. They're not wrong. New York
+is behind in criminal indictments. But if you're noticing a pattern, all the things I
+can give credit for here are attacking fraud in Democrat states, which to be clear,
+there is fraud in those states. And this has been used as a reason to withhold
+healthcare funding from those states. But what about Republican states? They also commit
+fraud, right? Like Florida, which we discussed earlier. Well, it's much less of a
+priority. And when the anti-fraud task force does talk about it, it sounds very
+different. See if you can spot a small difference in how they talk about California
+versus Florida. And so in California, I call California the the kingdom of fraud. Uh and
+Gavin Newsom reigns over this kingdom. here you have hundreds of billions of dollars in
+fraud.
+
+========================================================================
+SECTION: California versus Florida framing
+========================================================================
+
+[19:48] CLIP (anti-fraud task force, on Florida):
+I usually think about Florida as a pretty well-run state. So when you're telling me that
+you've got gargantuan fraud there, I'm nervous, but I'm listening.
+
+[19:57] CLIP (anti-fraud task force, on California):
+So there's a reason I call Gavin Newsom the king of fraud because he reigns over more
+fraud than I think we've seen in the history of the United States of America. Hundreds
+of billions of dollars of fraud have gone out the door under his reign as the king of
+fraud.
+
+[20:11] CLIP (anti-fraud task force, on Florida):
+Well, the state of Florida is very well-run by Governor DeSantis. Despite that, you have
+elements in South Florida who have built up a massive and corrupt scheme around durable
+medical equipment.
+
+[20:12] COFFEEZILLA:
+All right, so we have the California king of fraud and the well-run state of Florida
+with elements of fraud. That's the difference. And this is where we get to some real
+criticisms of this anti-fraud task force because in theory, fraud is an apolitical
+issue. But it's hard not to see the argument that some of this feels political, not only
+in the way that they're pausing funding, but also with the pardons. Because yes, I love
+that we're cracking down on some fraudsters, but it's hard not to notice that we're
+letting others out of jail.
+
+========================================================================
+SECTION: Pardons of convicted healthcare fraudsters
+========================================================================
+
+[20:53] CLIP (news, Harshbarger pardon):
+President Trump issued a pardon to Robert Harshburgger Jr., the husband of Tennessee
+Congresswoman Diana Harshbarger. Harshbarger pleaded guilty to one count of distribution
+of misbranded kidney dialysis drugs and one count of healthcare fraud in federal court
+in 2013. The pardon came at the end of the same week. President Trump also endorsed
+Diana Harshbarger in her 2026 bid for a fourth term.
+
+[21:16] CLIP (news, Esformes / Medicare scheme):
+Commuting the sentence of former Chicago area nursing home mogul Philip Esformes.
+Esformes is accused of a billion dollar Medicare case fraud, the largest in US history.
+It was a happy homecoming Wednesday morning. Judith Negron reunited with her loved ones,
+putting on a Make America Great Again hat and draping a President Trump flag over her
+shoulders. She's one of several people whose prison sentences were pardoned by the
+president after being convicted of organizing a massive Medicare swindling scheme.
+
+[21:46] COFFEEZILLA:
+Yeah. And this is where all the anti-fraud stuff starts to feel very hypocritical cuz
+it's kind of anti- fraud unless you're the right person or belong to the right party.
+And this is one of the many reasons I told you at the beginning of the show that that
+clip of RFK kind of ruined my life. Not just because the amount of fraud, but because as
+I tried to dig into how to fix this, I ran what I thought was a normal investigation. I
+talked to experts, healthcare workers, but then I started to realize the actual core
+problems were much deeper than just, oh, we need new investigators. Things are much more
+broken than I fully appreciated. It starts before this anti-fraud task force. I mean,
+some people think JD Vance and RFK were the first people to think of stopping fraud in
+Medicaid and Medicare, but there's actually a long line of attempts that goes back
+decades trying to stop this. I mean, the Medicaid fraud control units we just talked
+about, they came around in the '70s. We got the anti-fraud association in the 80s. The
+president launched an attack on Medicare and Medicaid fraud in the '90s. You could print
+that headline today and people would think it's Trump. No, that was Clinton. I could go
+on and on and on. And even the new talk about stopping waste, fraud, and abuse. Even
+those slogans are over a decade old,
+
+========================================================================
+SECTION: Older anti-fraud efforts
+========================================================================
+
+[22:52] CLIP (older political ad):
+which is trying to stop waste, fraud, and abuse.
+
+[22:55] CLIP (older political ad):
+To stop the waste, fraud, and abuse.
+
+[22:56] CLIP (older political ad):
+Waging war on government waste, fraud, and abuse.
+
+[23:00] COFFEEZILLA:
+Yeah, these new ideas we've been talking about aren't actually that new. And the same is
+true for when RFK says things like, "Oh, we need to stop paying Chase, right? The reason
+everything's so bad is because of the old system." He makes it sound like he's the first
+one who thought of this.
+
+========================================================================
+SECTION: Pay-and-chase versus detect-and-prevent
+========================================================================
+
+[23:16] CLIP (HHS, pay-and-chase):
+The federal government paid claims first and chase fraud after the money was out the
+door. And that approach of course failed taxpayers. We are ending it. HHS is replacing
+the old pay and chase system with a detect and prevent strategy that identifies
+suspicious claims before the taxpayer dollars ever leave the treasury. Yeah, when I
+first heard this, I really did think like, well, that kind of makes sense. Of course,
+don't pay people first and chase them later. Try to detect it early on. But actually,
+when you research this topic, you realize, oh, we've been talking about this for well
+over a decade. Instead of this sort of um pay and chase theory to try and monitor the
+billing aberrations and with the expanded strike capacity, um try to knock it down right
+away.
+
+[24:05] COFFEEZILLA:
+Right. So, even our new ideas on stopping fraud aren't actually new. We're just more
+politicized than ever. We're pardoning more fraudsters than ever, which I think is bad.
+I'm going to go out on a limb and say that. But many of the same problems today are also
+not new either. Like take for example the pardon problem. One of the people I spoke to
+in my research literally watched her boss get convicted and then granted clemency by Joe
+Biden.
+
+========================================================================
+SECTION: Clemency and a two-tier pattern
+========================================================================
+
+[24:30] CLIP (former employee, Burkhart case):
+I was just sitting at my desk. There's all this clamor like at the facility at in the
+front office. They put on the TV. We see live our corporate office being raided by the
+FBI and I'm just like I knew it. You know, like I didn't even know what was going on. I
+don't know why they were there. I was just like I knew they was doing something fishy.
+
+[24:58] COFFEEZILLA:
+Yeah. She watched her boss get arrested. His name was James Burkhart. And later turns
+out he was granted clemency under Joe Biden. Now, I should tell you there was no causal
+link that I can find to the following, but Burkhart reportedly bragged that he spent
+quote a lot of money on politicians. I mean, make up your own mind there. This stuff
+just really gets depressing when you start to realize the pattern of behavior,
+especially for the people who witness it.
+
+[25:23] CLIP (former employee, Burkhart case):
+I don't want to normalize it whatsoever. What's wrong is still wrong. But am I losing
+faith in humanity every day? Yeah. I mean, the laws typically don't apply to people like
+them. I could go to jail tomorrow for not paying my parking ticket. You know, these
+people can get away with like millions and millions of fraud and not see any
+consequences.
+
+[25:47] COFFEEZILLA:
+It's true. I mean, it feels like for decades we've been talking about stopping blatant
+healthcare fraud, but in reality, it feels like we kind of have a two-tier system of
+justice. I mean, obviously you have prison for the people without a lot of connections,
+but you get pardons for the rich, well-connected ones who are of the right political
+party or company, but also there's more than just pardons, right? And it's here we need
+to discuss civil fines and settlements because to be honest, you know, pardons and
+clemency, they are the most morally outrageous stories, but they don't happen as often
+as this next thing we're going to talk about, which is that fraudsters and companies
+will often pay a fine to settle a case rather than go to jail. Unfortunately, this is
+something that happens usually to the best connected or biggest fraudsters out there.
+And the worst part of so many of these settlements is because there's no admission of
+wrongdoing, oftentimes this individual or corporation still gets to bill the government
+for Medicare and Medicaid. So rather than taking people off the table that have done
+legitimate fraud, the government often allows them to continue billing such as you know
+they're a part of the settlement agreement. And in those settlement agreements, those
+labs continue to move forward and they poison the well for all labs, for all doctors to
+make it that it's incredibly difficult to operate as a good actor in this space. And the
+bad actors get to continue to play in the same game.
+
+========================================================================
+SECTION: Settlements that leave billers in the system
+========================================================================
+
+[27:15] COFFEEZILLA:
+Yeah, you can't be anti-fraud without discussing settlements because keeping bad actors
+in the system is a truly terrible idea. But it's what we often do. To steel-man the
+logic here, The logic here, you know, we're supposed to be allowing companies to reform
+themselves, you know, fix bad actors within their company. But the problem is when it's
+a pattern of behavior. When does reform stop and the willful abuse of a system begin?
+Take Lincare for example, an oxygen medical equipment company. For decades, Lincare has
+been formally and informally accused of waste fraud and abuse. It starts in 2006 with
+the quote largest ever civil monetary penalty case that alleged that Lincare paid
+illegal kickbacks. but it ended in a settlement and at the time the inspector general
+said that this was an effort to eliminate illegal kickback practices. Now did that stop
+Lincare bad behavior? Well, not according to a former employee in 2008.
+
+========================================================================
+SECTION: Lincare case history
+========================================================================
+
+[28:07] CLIP (former Lincare employee, 2008):
+I worked for Lincare in Fayetteville, North Carolina. They would make up numbers to
+write down on the form. We had to be within a certain amount of compliance every month
+to meet a monthly goal. And by having the patient sign the form, they could later go
+back and add in numbers and it would look like there was an actual check done. Basically
+had me fill have the patient sign these forms and then later go back and falsify the
+information on it. I told this to Carla thinking something would be done. Nothing was
+ever done. I called Lincare headquarters to let them know about the documents being
+falsified. I don't think anything happened. I think they did a brief investigation and
+then they let it go.
+
+[28:55] COFFEEZILLA:
+Okay, so this former employee alleges falsified documents by Lincare and says nothing
+happened. But before you say, "Oh, well, this was probably for clout or YouTube fame,"
+just know his channel has 12 subscribers and he only posted one video 18 years ago. Fast
+forward a decade later, by the way, it's 2018 and we get another press release. Lincare
+paid $5.25 million to settle False Claims Act allegations. This time, special agent
+Steve Hansen said, "Greed at the expense of our most vulnerable citizens will not be
+tolerated." A year later, another former employee comes forward. This time, the guy has
+23 subscribers, and both of his videos are complaining about Lincare.
+
+[29:35] CLIP (former Lincare employee):
+That place is horrible. That has to be one of the worst jobs I ever worked in my entire
+life, people. The whole company concept of business and like how they do people and how
+they do the employees and the patients and all the scamming they be doing. I mean, the
+video has to be put out.
+
+[29:57] COFFEEZILLA:
+Okay, once again, maybe you think, oh that's just another employee accusing them of
+scamming. You know what does he know? Well, fast forward a few more years. Lincare
+settles again, this time for $29 million to resolve claims of quote overbilling
+Medicare. It was called the largest ever healthcare fraud settlement in Eastern
+Washington. Ooh, great. And this time, special agent Steven Ryan said Lincare threatened
+the integrity of a taxpayer funded healthcare programs. And they said they were hopeful
+with the implementation of a corporate integrity agreement. But you just have to look at
+ProPublica's reporting that Lincare has already been on probation four times before and
+quote violated its terms. So, I'm not sure I'm so optimistic about how useful a
+corporate integrity agreement is going to be. And by the way, less than a year later,
+another DOJ settlement hit Lincare, this time for $25 million for quote fraudulent
+billing practices. In response, Special Agent Brian Selei responded, quote, "This
+settlement makes clear that firms will pay the price for attempting to defraud the
+government." But my question is, have they actually paid the price? It's not clear that
+this was meaningful to them. I mean, Lincare's annual revenue is estimated at $2 billion
+this year and the government just charged them $25 million. I mean, I'll just let that
+former employee explain the math of this.
+
+[31:15] CLIP (former Lincare employee):
+They know they could do so much dirt and who going to touch them. I mean, you sued them
+for what, 15, 20 million? They ain't going to break. They're worth billions and they
+know this.
+
+[31:23] COFFEEZILLA:
+Yeah, it's kind of obvious when you think about it. If the penalty for cheating at the
+corporate level is only a fine, then it's really not illegal. It's just a cost of doing
+business. It's like we discover cheaters and we allow them to continue to play the game
+and then we get mad at everyone for cheating. We spent the time, the money, the dollars
+on finding the cheaters and then we allow them to keep playing the game. Right? And this
+is the larger theme I keep coming back to. We've discovered a lot of problems in this
+video. Many of them I would describe as shocking and blatant, but we don't seem to be
+fixing many of them for economic, political, or corrupt reasons. While other problems we
+are cracking down on, but this leaves us in a perpetual state of hypocrisy where we say
+we want to stop fraud, but the same crimes we throw some people in jail for, other
+people get rich from. Take the healthcare company Columbia HCA. It plead guilty to
+substantial criminal conduct and quote systemically defrauding Medicare and Medicaid.
+Now, did the CEO behind this company go to jail? No. He became the senator of Florida.
+He was never charged and got no jail time. And speaking of Florida, by the way, maybe
+now it's time I tell you the reason I was there at the beginning of this video. See,
+originally it wasn't to visit those labs. At first, I was just there to attend a funeral
+for my grandfather. Now, as plans were being made, I just so happened to be
+investigating these labs that were in the area. So, I swung by. But, it was really
+something that kind of shook me awake on this whole thing because, you know, as a
+younger person, I don't tend to spend a lot of time thinking about the true end users of
+healthcare. I just think, oh yeah, this fraud stuff is making me pay more money. But
+when you actually have a death in the family, it makes you confront that there are
+people who rely on this system. So it's not just the case that it drives up prices for
+everyone. You actually have people stealing away money that could have gone to services
+for people who actually need it. So it caused me both to appreciate the doctors and
+nurses who really do healthcare for a living, but on the other hand, it made me feel
+much more anger towards the people who we are allowing to rob our system that we all
+will eventually lean on one way or another in our final years. We want to make sure that
+people are getting the care that we are all collectively paying for. And it's for that
+reason I want to take a moment to talk about the nursing home industry and skilled
+nursing as well. This is different from hospice, by the way, which we've already
+discussed, but it is part of the elder care world. And the first thing I noticed that
+really stuck out to me about this industry is how people who worked in it or around it
+talked about if they would put their own parents there.
+
+========================================================================
+SECTION: Nursing homes and understaffing
+========================================================================
+
+[33:49] CLIP (elder-care worker):
+I would never put my loved one in a nursing home. No, not at never.
+
+[33:56] CLIP (elder-care worker):
+I would sooner put a bullet in the back of their head than put them in a in a senior
+care facility. I'll go this far. I would put a bullet in my own head before I put my
+before I was put in.
+
+[34:07] CLIP (elder-care worker):
+I wouldn't want to send myself there if I'm being perfectly honest with you.
+
+[34:11] COFFEEZILLA:
+Yeah, this really freaked me out. I mean, why are people reacting so strongly to this
+basic question? It has to be because the quality of care at a lot of these facilities is
+just bad. But what's causing that?
+
+[34:23] CLIP (nursing-home expert):
+Nursing homes have uh cut down uh staffing uh severely. Most nursing homes do not
+provide sufficient staffing to ensure basic quality of care.
+
+[34:37] CLIP (nursing-home expert):
+All problems really lead back to insufficient staffing. The lack of staffing is the
+number one thing that affects residents quality of life.
+
+[34:46] COFFEEZILLA:
+Right? It seems obvious, but companies who don't hire enough staff are going to have
+patients that experience neglect. And that's why you get horror stories like these.
+
+[34:55] CLIP (family, nursing home):
+Did she have her meds? He goes, I can't give her meds. I'm only a CNA. I go, "So, you
+mean to tell me that she has not had any meds this morning?" He said, "No, I've been
+here since 6:30 this morning, and nobody's gotten their meds." I go, "Nobody? Nobody."
+
+[35:11] CLIP (family, nursing home):
+I remember one incident. We got a phone call that he had fallen out the bed. We were
+all, you know, upset. I had to go back up there, see what was going on. They did not
+take him to the hospital. They did not call a paramedic. They basically just put him
+back in the bed and he'll be fine type of thing. Then my mom told me of a time that she
+got a call. She's like, "Sharon, they just called me. One of the nurses gave him too
+much insulin." And I'm like, "That could kill him." Even his fall incident. He had tried
+calling a nurse and nobody came is what he told us later. So he was trying to get up to
+do something and ended up falling. And I don't know how long he was on the floor before
+somebody showed up.
+
+[35:55] CLIP (family, nursing home):
+I believe that they they killed her um because of their lack of care, their lack of
+staff. She had nothing but problems every single evening. We witnessed lack of care
+between their cleaning of her, paying attention to her diabetic needs and the sustenance
+that she needed in order to keep her from going into diabetic comas. ultimately their
+lack of care, paying attention when they had her off event, they killed her. And so that
+we don't want anybody to go to that facility. I would never want that on anybody. If we
+could do it over again, we definitely would never have put our mother there.
+
+[36:40] COFFEEZILLA:
+Yeah. And this is why people are understandably freaked out about putting their parents
+or grandparents in these places is they hear the regret in other people and they wonder,
+well, how do I know this understaffing isn't happening at the place I want to put my
+parents or grandparents? And more fundamentally, why is this happening in the first
+place? Well, to get to the bottom of it, I contacted Hunterbrook, a team of journalists
+who actually recorded some of the conversations you just heard. And they recently
+investigated the largest public company called Ensign Group, which holds hundreds of
+these homes and facilities around America. And I wanted to know how this all works at a
+business level.
+
+========================================================================
+SECTION: Ensign Group business model
+========================================================================
+
+[37:14] HUNTERBROOK:
+When you think about the business model of these companies, essentially all of their
+money comes from the government. And what they do when you get to a facility is they try
+to figure out how sick you are. They measure something called your acuity. And how sick
+you are dictates how much money these facilities can get from the government to take
+care of you. They're supposed to use that money to provide you with sufficient staffing
+to make sure that you're actually taken care of. But the business model is a pushpull.
+It's money in from the government depending on how sick you are, money out towards many
+things, but largely staffing. And so the fewer nurses they hire, the better their
+margins, and that's the crux of what these businesses are all about.
+
+[37:54] COFFEEZILLA:
+So there's a financial incentive to hire as few nurses as possible.
+
+[37:59] COFFEEZILLA:
+Yeah, nurses are expensive. And if you can hire fewer nurses, you can make more money.
+So if you're not really so passionate about making sure that the people who live in
+these facilities are doing all right, then hiring fewer nurses is a no-brainer. This is
+the problem. There is a clear financial incentive to hire fewer nurses because it makes
+the company more money. But Ernest Tosh, a elder abuse lawyer, actually would say this
+is fraud. So when you think about it, they're being paid to staff up here. This is a cut
+
+========================================================================
+SECTION: Staffing billed versus staffing delivered
+========================================================================
+
+[38:34] ERNEST TOSH (elder-abuse lawyer):
+and they staff way down here.
+
+[38:37] COFFEEZILLA:
+Yeah.
+
+[38:37] ERNEST TOSH (elder-abuse lawyer):
+Well, the difference between those two numbers is fraud.
+
+[38:40] COFFEEZILLA:
+Yeah.
+
+[38:41] ERNEST TOSH (elder-abuse lawyer):
+Okay. You You swore you would do this. You got paid for this. You did this. Fraud.
+
+[38:48] COFFEEZILLA:
+Yeah. I think he's right. The patients have a level of need. And if the company is not
+hiring enough people to do what they're getting paid to do, well, that looks a lot like
+phantom fraud. But this is where things unfortunately get complicated because while you
+might think there would be very strict rules on things like how much time a patient
+needs with a qualified nurse or staff, the problem is these guidelines aren't exactly
+enforced. Is there any standard for this? Like like what you're saying is okay, they
+measure the acuity, you know, they measure this like like the needs.
+
+========================================================================
+SECTION: The repealed federal staffing rule
+========================================================================
+
+[39:19] COFFEEZILLA:
+Is there any mandate that hey at this need level you have to staff this many people? Um,
+didn't we have a rule for this?
+
+[39:28] HUNTERBROOK:
+Yes, there are guidelines saying that you need to have adequate staffing and various
+states have various policies with very clear goals, which are that if you're running one
+of these facilities, you need to make sure that you have enough nurses to take care of
+the patients, particularly relative to how sick these patients are. And there was
+actually going to be a federal rule from the Center for Medicare and Medicaid Services
+in 2024. And that was going to require minimum staffing across the board. There was
+actually a study from the University of Pennsylvania that found that this rule would
+save 13,000 lives a year. The thing is on the other side, you know, it saves a bunch of
+lives, but it also would mean that companies like Ensign would be a bit less profitable.
+What ended up happening is there ended up being a full-court press to stop this rule
+from going into effect. There was a court case in Texas and it vacated some of the core
+provisions of this this rule. And then the government was going to appeal this. They
+really wanted to put this rule into effect until the industry lobbied super hard. And
+Stephen, guess what the Trump administration ended up doing?
+
+[40:40] COFFEEZILLA:
+They repealed it.
+
+[40:41] COFFEEZILLA:
+They did. They repealed the rule in December. And so the industry was able to
+effectively lobby against a federal mandate for how many hours of staffing they need to
+provide relative to the sickness of the patients who live inside of these homes. Yeah,
+it's true. The elder care industry lobbied to remove the federal law that said they have
+to have minimum hours for staffing. And according to the New York Times, the industry
+like lobbying group donated about $4.8 million to MAGA Inc. Now, like before with James
+Burkhart and Biden for legal reasons, I have to tell you, I've not found a causal link
+between lobbying and a rule change, the people involved deny a connection. But it is
+undoubtedly true that losing federal minimums is great for the bottom lines of these
+companies. To put it bluntly, it allows them to understaff as much as possible and
+increase profits for their shareholders. Incidentally, you should know the revenues for
+a lot of these nursing home or skilled nursing companies are recently hitting all-time
+highs. Here's Ensign Group and PACS Group. Yeah. And meanwhile, while they're making
+record profits and while they're deregulating themselves in some respects, many experts
+will tell you this is not a free market industry.
+
+========================================================================
+SECTION: Why this is not an open market
+========================================================================
+
+[41:52] CLIP (industry critic):
+The nursing home industry is not a capitalist industry. It's a cartel because you have
+to have a license to operate and that license is based on the need of care. The states
+are going to only issue licenses when they think there's enough business. So this is a
+restricted market and nobody ever gets kicked out by the way. So it's not operating as a
+free market capitalist system. What that does is it leads to a huge amount of
+corruption. If you look at the amount of money they spend lobbying, for instance, the
+American Healthcare Association, they swing a lot of weight in Washington.
+
+[42:30] COFFEEZILLA:
+This is what I find so annoying about this story. This is actually a heavily lobbied
+industry that kind of wants it both ways. They want Medicaid and Medicare dollars, but
+they don't want strings attached from the federal government. And this brings us to the
+central question of the money we are spending for patient care. How much of it doesn't
+get delivered because of understaffing to increase profits? Well, Hunterbrook tried to
+find out. Can we calculate how much Ensign profited by understaffing their facilities
+like according to how much their resident needs demanded?
+
+========================================================================
+SECTION: Hunterbrook staffing-gap estimate
+========================================================================
+
+[43:02] HUNTERBROOK:
+Yes. So, we worked with some professors who built a whole model to try to assess
+relative to acuity, relative to how sick patients are, how much staff should you have in
+a nursing facility. And we were able to look at data across 5 months that we obtained
+that showed what the real staffing was at Ensign's facilities. Ensign facilities were
+short. More than $5 million nursing hours, which we estimate made them $161 million in
+extra profits just over those 5 months. That's $30 million a month in profits based
+solely on care that Ensign did not provide to the people in its facilities. We then
+found this number for nursing facilities nationwide as reported in this CMS data. And
+what we found is that the profit again over just 5 months was $6.5 billion of profits
+that are a direct result of inadequately staffing these facilities with nurses. That's
+over a billion dollars a month. And I want to be clear, that's your tax dollars. These
+companies are making money from the government, reimbursing them, paying them for the
+care they are supposed to provide people based on how sick they are. And then that care
+is not being provided to the tune of billions of dollars. And those are profits for
+these companies.
+
+========================================================================
+SECTION: Close
+========================================================================
+
+[44:27] COFFEEZILLA:
+Billions of dollars in healthcare we should be getting. According to Hunterbrook, we are
+just not because of the fact we just repealed this federal staffing law. And this feels
+just like another part of our two-tier system of justice when it comes to healthcare. On
+the one hand, we have the big crackdown, the anti-fraud task force on fraudulent
+hospices. Okay, great. That's long overdue. But then you've got these giant elder care
+companies who are getting rules removed to help them make more money and keep more of
+the profits for themselves. All the while, patients and providers are saying there
+aren't enough nurses in these homes. And by the way, some of these companies like Ensign
+Group, by the way, have already been accused of billing the government for care they did
+not provide. So, it's not as if this is an impossible idea to imagine that a company
+would put profits over patients. Although, I must say those allegations were made back
+in 2013 against the Ensign Group. And of course, what happened? Well, they settled them
+for $48 million. Look, I agree with our government. There is shocking and blatant fraud
+in our healthcare system. I hope that's been made clear. You can find it all across the
+country, not just in California, not just in Florida. But while it's easy to point out
+problems, the solutions aren't so easy. For decades, I hope you realize we have been
+trying to tackle fraud in America. This newest attempt isn't actually that new, except
+for a noticeable political tilt. And my hope is we can look beyond right, left, and
+actually stop the bad actors when we catch them committing fraud. because so often that
+seems to be the actual problem. We're finding the cheaters. We just aren't stopping
+them.
+
+========================================================================
+SECTION: Outro
+========================================================================
+
+[46:01] OUTRO:
+Wow. Wow. Wow. Look who's finally come crawling back. Dad.
+
+[46:06] OUTRO:
+Hey, I just said the design was made by humans. I mean, I -- you know, I don't know
+where you're from.
+
+[46:11] OUTRO:
+Huh. Well, I'm still getting a paternity test.
+
+[46:14] OUTRO:
+Yeah, good luck with that. In this healthcare system, I don't think so.
+
+[46:18] OUTRO:
+Almost makes you wonder if it's that way on purpose. Probably. I mean, we just covered
+the government stuff. The private payer is even worse.
+
+[46:26] OUTRO:
+Yeah, I can't. Luigi..
+
+[46:30] OUTRO:
+What?
+
+[46:31] OUTRO:
+I said I can't believe it,
+
+[46:34] OUTRO:
+right? Yeah, I know. It is pretty crazy.
+
+[46:39] OUTRO:
+I mean, when are things finally -- like, we do all this work, when is it finally going
+to change for the better?
+
+[46:47] OUTRO:
+I don't know. I try not to think about it. I just don't like where my head goes when I
+do.
+
+[46:55] OUTRO:
+That's what I'm talking about. The proportion's perfect. We'll run a promo at the bar.
+Buy five, get a free shirt. I like the sound of that. What do you think about that,
+Copy? Is that a good deal? Copy. Copy. The merch. Copy. We're talking about the merch.
+
+[47:14] OUTRO:
+Huh?
+
+[47:48] OUTRO:
+What's up,
+
+========================================================================
+SECTION: Residual caption uncertainty
+========================================================================
+
+These strings were left as the captions heard them, or only lightly cleaned.
+An agent should not treat them as confirmed spellings.
+
+- Rasheed (ordering physician named in public complaints; last name not spoken clearly)
+- Telesolutions MC / CTD Network LLC (CTD matches a Nov 2025 DOJ indictment of Marek Rex Vernon Harrison; the physician name Rasheed does not appear in that indictment)
+- Special Agent Brian Selei (spelling unconfirmed)
+- 'a prize diagnostics' (lab next to Prince Laboratories; spelling unconfirmed; left as heard)
+- CDT Network: narration also says CTD Network. A Nov 2025 DOJ indictment names CTD Network LLC. Both spellings are kept where spoken.
+- Special Agent Steve Hansen and Special Agent Steven Ryan (as heard)
+- Carla (Lincare manager named by a former employee; last name not given)
+- Sharon (family member in a nursing-home clip; last name not given)
+- Copy (name used for the sponsor-read partner; may be a nickname)
+- Sponsor-read dollar figure '$10 million studio' is a joke in the ad read, not a reported fact
+- 'I can't. Luigi.' near the end is an aside; the captions run two phrases together and the meaning is not established
