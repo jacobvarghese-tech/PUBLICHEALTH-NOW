@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Date: Sat, 17 Oct 2026 15:25:03 GMT
+Content-Type: text/csv
+Content-Length: 10802977
+Connection: keep-alive
+Server: gunicorn
+Content-Disposition: attachment; filename="UPDATED.csv"
+Last-Modified: Fri, 09 Oct 2026 12:51:03 GMT
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Cross-Origin-Opener-Policy: same-origin
+X-Frame-Options: SAMEORIGIN
+
