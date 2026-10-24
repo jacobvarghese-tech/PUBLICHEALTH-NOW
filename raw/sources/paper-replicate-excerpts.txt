@@ -1,0 +1,134 @@
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+Feature | Description | Type
+npi | Unique provider identification number | Categorical
+provider_type | Medical provider’s specialty (or practice) | Categorical
+nppes_provider_gender | Provider’s gender | Categorical
+line_srvc_cnt | Number of procedures/services the provider performed | Numerical
+bene_unique_cnt | Number of distinct Medicare beneficiaries receiving the service | Numerical
+bene_day_srvc_cnt | Number of distinct Medicare beneficiary/per day services performed | Numerical
+average_submitted_chrg_amt | Average of the charges that the provider submitted for the service | Numerical
+average_medicare_payment_amt | Average payment made to a provider per claim for the service performed | Numerical
+exclusion | Fraud labels from the LEIE database | Categorical
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+Because the Medicare dataset is at the procedure-level (NPI and HCPCS) but the LEIE database is at the provider- or NPI-level, we elect to aggregate the Medicare data to the provider-level for a one-to-one mapping of fraud labels from the LEIE database. Note that there is currently no known data source for fraud labels by provider and procedure procedure performed. The process for aggregating the Medicare data to the provider-level involved grouping the data by specialty (provider type), provider (NPI), gender, and Medicare year, aggregating over procedure (HCPCS) and place of service. To avoid too much information loss due to this aggregation, we derive additional numeric features, from the original five numeric features, to include the mean, sum, median, standard deviation, minimum, and maximum.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+Rule number | Description | Min. period
+1128(a)(1) | Conviction of program-related crimes | 5 years
+1128(a)(2) | Conviction for patient abuse or neglect | 5 years
+1128(a)(3) | Felony conviction due to healthcare fraud | 5 years
+1128(b)(4) | License revocation or suspension | 5 years
+1128(c)(3)(g)(i) | Conviction of 2 mandatory offenses | 10 years
+1128(c)(3)(g)(ii) | Conviction on 3 or more mandatory offenses | Indefinite
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+From the LEIE database, we first create the range of each exclusion period by adding the minimum length of the exclusion to the exclusion start date to get the exclusion end date. We then compare the month and year of the exclusion end date with any waiver or reinstatement dates. The smallest month and year is then assigned as the new exclusion end date. For example, if the exclusion end date is 2/12/2015 and there is a waiver date of 1/1/2013, then the new exclusion end date is changed to the earlier date of 1/1/2013. This accounts for providers that may still be in the exclusion period but received a waiver or reinstatement to use Medicare, thus no longer considered fraudulent on or after this waiver or reinstatement date. In order to avoid too few or too many fraud labels, we round the new exclusion end date to the nearest years based on the month. So, if the month is greater than 6 then the exclusion end year is increased to the following year, otherwise the current year is used.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+We use six different learners to assess fraud detection behavior across class distributions from severely imbalanced to balanced. Each learner is built and validated using the Weka machine learning software. The default configurations and parameters are used with changes made when preliminary analysis indicated increased learner performance.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+Our last learner is random forest (RF). This is an ensemble approach building multiple unpruned decision trees representing the forest. The classification results are calculated by combining the results of the individual trees, typically using majority voting. RF generates random datasets via sampling with replacement to build each tree. The feature at each node is automatically selected to be the most discriminating feature based on entropy and information gain. Furthermore, RF incorporates feature subspace selection to randomly assign i features for each decision tree. Due to the ensemble nature of and randomness in RF, this method is not likely to overfit the data. We build each RF learner with 100 trees only (denoted as RF100), with preliminary analysis showing no significant difference between 100 and 500 trees.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+In our study, we use random undersampling (RUS) because it retains all of the fraud labels, it affords good performance (especially with big data), and has relatively few weaknesses. We generate seven different class distribution (majority:minority) which include: 99.9:0.1, 99:1, 95:5, 90:10, 75:25, 65:35, and 50:50.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+To evaluate learner performance, we incorporate k-fold cross-validation. The training data is divided into k-folds. A learner is trained on k - 1 folds and tested on the remaining fold, with this process repeated k times. This ensures all data is used in training and validation. To prevent folds with little to no minority class instances, we use stratified cross-validation which tries to ensure that each class is approximately equally represented across each fold. Specifically, we use 5-fold cross-validation repeated 10 times. The average of the 5-fold cross-validation scores, across all 10 repeats, is used for the final learner performance results. The use of repeats helps to reduce bias due to bad random draws when creating the folds.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+The Medicare data is from calendar years 2012 to 2015, with 2015 being released in June 2017.
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6120851/
+Class distribution | 5NN | C4.5 | LR | NB | RF100 | SVM
+99.9:0.1 | 0.60397 | 0.79967 | 0.80768 | 0.61770 | 0.74375 | 0.63735
+99:1 | 0.66341 | 0.79682 | 0.81373 | 0.61991 | 0.85069 | 0.62875
+95:5 | 0.74348 | 0.79379 | 0.81877 | 0.62461 | 0.87246 | 0.68360
+90:10 | 0.77650 | 0.79036 | 0.81987 | 0.62422 | 0.87302 | 0.60361
+75:25 | 0.80332 | 0.78417 | 0.82047 | 0.63014 | 0.86688 | 0.78512
+65:35 | 0.80551 | 0.77854 | 0.81897 | 0.63116 | 0.86136 | 0.78989
+50:50 | 0.79865 | 0.77126 | 0.81675 | 0.62594 | 0.85299 | 0.79474
+
+https://data.cms.gov/sites/default/files/2025-11/bf4231f9-ec7f-4189-afc3-ba5d53b8bd12/MUP_PHY_R25_P04_V20_D13_Prov_Svc.csv
+Rndrng_NPI,Rndrng_Prvdr_Last_Org_Name,Rndrng_Prvdr_First_Name,Rndrng_Prvdr_MI,Rndrng_Prvdr_Crdntls,Rndrng_Prvdr_Ent_Cd,Rndrng_Prvdr_St1,Rndrng_Prvdr_St2,Rndrng_Prvdr_City,Rndrng_Prvdr_State_Abrvtn,Rndrng_Prvdr_State_FIPS,Rndrng_Prvdr_Zip5,Rndrng_Prvdr_RUCA,Rndrng_Prvdr_RUCA_Desc,Rndrng_Prvdr_Cntry,Rndrng_Prvdr_Type,Rndrng_Prvdr_Mdcr_Prtcptg_Ind,HCPCS_Cd,HCPCS_Desc,HCPCS_Drug_Ind,Place_Of_Srvc,Tot_Benes,Tot_Srvcs,Tot_Bene_Day_Srvcs,Avg_Sbmtd_Chrg,Avg_Mdcr_Alowd_Amt,Avg_Mdcr_Pymt_Amt,Avg_Mdcr_Stdzd_Amt
+
+https://data.cms.gov/sites/default/files/2025-11/6700f86d-d2e5-4f2d-9dcb-8c30412768ff/MUP_PHY_R25_P04_V20_D14_Prov_Svc.csv
+Rndrng_NPI,Rndrng_Prvdr_Last_Org_Name,Rndrng_Prvdr_First_Name,Rndrng_Prvdr_MI,Rndrng_Prvdr_Crdntls,Rndrng_Prvdr_Ent_Cd,Rndrng_Prvdr_St1,Rndrng_Prvdr_St2,Rndrng_Prvdr_City,Rndrng_Prvdr_State_Abrvtn,Rndrng_Prvdr_State_FIPS,Rndrng_Prvdr_Zip5,Rndrng_Prvdr_RUCA,Rndrng_Prvdr_RUCA_Desc,Rndrng_Prvdr_Cntry,Rndrng_Prvdr_Type,Rndrng_Prvdr_Mdcr_Prtcptg_Ind,HCPCS_Cd,HCPCS_Desc,HCPCS_Drug_Ind,Place_Of_Srvc,Tot_Benes,Tot_Srvcs,Tot_Bene_Day_Srvcs,Avg_Sbmtd_Chrg,Avg_Mdcr_Alowd_Amt,Avg_Mdcr_Pymt_Amt,Avg_Mdcr_Stdzd_Amt
+
+https://data.cms.gov/sites/default/files/2025-11/14954ce3-4c43-43df-97e9-2c0437d7b43c/MUP_PHY_R25_P04_V20_D15_Prov_Svc.csv
+Rndrng_NPI,Rndrng_Prvdr_Last_Org_Name,Rndrng_Prvdr_First_Name,Rndrng_Prvdr_MI,Rndrng_Prvdr_Crdntls,Rndrng_Prvdr_Ent_Cd,Rndrng_Prvdr_St1,Rndrng_Prvdr_St2,Rndrng_Prvdr_City,Rndrng_Prvdr_State_Abrvtn,Rndrng_Prvdr_State_FIPS,Rndrng_Prvdr_Zip5,Rndrng_Prvdr_RUCA,Rndrng_Prvdr_RUCA_Desc,Rndrng_Prvdr_Cntry,Rndrng_Prvdr_Type,Rndrng_Prvdr_Mdcr_Prtcptg_Ind,HCPCS_Cd,HCPCS_Desc,HCPCS_Drug_Ind,Place_Of_Srvc,Tot_Benes,Tot_Srvcs,Tot_Bene_Day_Srvcs,Avg_Sbmtd_Chrg,Avg_Mdcr_Alowd_Amt,Avg_Mdcr_Pymt_Amt,Avg_Mdcr_Stdzd_Amt
+
+https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv
+LASTNAME,FIRSTNAME,MIDNAME,BUSNAME,GENERAL,SPECIALTY,UPIN,NPI,DOB,ADDRESS,CITY,STATE,ZIP,EXCLTYPE,EXCLDATE,REINDATE,WAIVERDATE,WVRSTATE
+
+https://data.cms.gov/sites/default/files/2025-03/bbb1e50e-5ba8-42ed-b072-18368b6f37f9/MUP_PHY_RY25_20250312_DD_PRV_SVC_508.pdf
+Rndrng_NPI
+Rndrng_Prvdr_Last_Org_Name
+Rndrng_Prvdr_First_Name
+Rndrng_Prvdr_MI
+Rndrng_Prvdr_Crdntls
+Rndrng_Prvdr_Ent_Cd
+Rndrng_Prvdr_St1
+Rndrng_Prvdr_St2
+Rndrng_Prvdr_City
+Rndrng_Prvdr_State_Abrvtn
+Rndrng_Prvdr_State_FIPS
+Rndrng_Prvdr_Zip5
+Rndrng_Prvdr_RUCA
+Rndrng_Prvdr_RUCA_Desc
+Rndrng_Prvdr_Cntry
+Rndrng_Prvdr_Type
+Rndrng_Prvdr_Mdcr_Prtcptg_Ind
+HCPCS_Cd
+HCPCS_Desc
+HCPCS_Drug_Ind
+Place_Of_Srvc
+Tot_Benes
+Tot_Srvcs
+Tot_Bene_Day_Srvcs
+Avg_Sbmtd_Chrg
+Avg_Mdcr_Alowd_Amt
+Avg_Mdcr_Pymt_Amt
+Avg_Mdcr_Stdzd_Amt
+
+https://data.cms.gov/sites/default/files/2025-11/bf4231f9-ec7f-4189-afc3-ba5d53b8bd12/MUP_PHY_R25_P04_V20_D13_Prov_Svc.csv
+Rndrng_NPI,Rndrng_Prvdr_Last_Org_Name,Rndrng_Prvdr_First_Name,Rndrng_Prvdr_MI,Rndrng_Prvdr_Crdntls,Rndrng_Prvdr_Ent_Cd,Rndrng_Prvdr_St1,Rndrng_Prvdr_St2,Rndrng_Prvdr_City,Rndrng_Prvdr_State_Abrvtn,Rndrng_Prvdr_State_FIPS,Rndrng_Prvdr_Zip5,Rndrng_Prvdr_RUCA,Rndrng_Prvdr_RUCA_Desc,Rndrng_Prvdr_Cntry,Rndrng_Prvdr_Type,Rndrng_Prvdr_Mdcr_Prtcptg_Ind,HCPCS_Cd,HCPCS_Desc,HCPCS_Drug_Ind,Place_Of_Srvc,Tot_Benes,Tot_Srvcs,Tot_Bene_Day_Srvcs,Avg_Sbmtd_Chrg,Avg_Mdcr_Alowd_Amt,Avg_Mdcr_Pymt_Amt,Avg_Mdcr_Stdzd_Amt
+
+nppes_provider_gender: not present
+Rndrng_Prvdr_Gndr: not present
+
+https://data.cms.gov/sites/default/files/2025-03/bbb1e50e-5ba8-42ed-b072-18368b6f37f9/MUP_PHY_RY25_20250312_DD_PRV_SVC_508.pdf
+Rndrng_NPI
+Rndrng_Prvdr_Last_Org_Name
+Rndrng_Prvdr_First_Name
+Rndrng_Prvdr_MI
+Rndrng_Prvdr_Crdntls
+Rndrng_Prvdr_Ent_Cd
+Rndrng_Prvdr_St1
+Rndrng_Prvdr_St2
+Rndrng_Prvdr_City
+Rndrng_Prvdr_State_Abrvtn
+Rndrng_Prvdr_State_FIPS
+Rndrng_Prvdr_Zip5
+Rndrng_Prvdr_RUCA
+Rndrng_Prvdr_RUCA_Desc
+Rndrng_Prvdr_Cntry
+Rndrng_Prvdr_Type
+Rndrng_Prvdr_Mdcr_Prtcptg_Ind
+HCPCS_Cd
+HCPCS_Desc
+HCPCS_Drug_Ind
+Place_Of_Srvc
+Tot_Benes
+Tot_Srvcs
+Tot_Bene_Day_Srvcs
+Avg_Sbmtd_Chrg
+Avg_Mdcr_Alowd_Amt
+Avg_Mdcr_Pymt_Amt
+Avg_Mdcr_Stdzd_Amt
+
+nppes_provider_gender: not present
+Rndrng_Prvdr_Gndr: not present
+
+2012 URL not opened.

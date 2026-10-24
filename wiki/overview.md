@@ -1,7 +1,7 @@
 ---
 type: overview
 title: Overview
-updated: 2026-10-15
+updated: 2026-10-17
 tags: [overview, contest]
 sources:
   - raw/sources/contest-brief-2026-10-15.md
@@ -10,7 +10,7 @@ sources:
 
 # Overview
 
-The job is one eligible app, one district, submitted before noon Eastern on October 26, 2026. Eleven days were left when this page was written.
+The job is one eligible app, one district, submitted before noon Eastern on October 26, 2026. Nine days were left when this page was updated on 2026-10-17.
 
 The contest is the [[Congressional App Challenge]], run for the [[House of Representatives]] by the [[Internet Education Foundation]]. Rules, video requirements, and judging criteria are compiled on [[deadline]], [[eligibility]], [[submission]], [[judging]], and [[prizes]]. The source behind those pages is [[2026 contest brief]], checked against [[2026 CAC Rules PDF]].
 
@@ -26,16 +26,16 @@ The contest is the [[Congressional App Challenge]], run for the [[House of Repre
 
 - Home district and school district, and whether either member is hosting.
 - Solo or team.
-- The app concept is Pattern Check. See [[app idea]]. It ranks unusual Medicare billing. A classifier was not trained because the joined label count stayed under 50.
+- The app to build is Medicare Fraud Flagger. Depth is locked on [[scope]]: billing years 2018–2024, one XGBoost model, a search page. Hosting is now wanted, assumed AWS. Decisions so far are on [[build decisions]]. Pattern Check on [[app idea]] is the earlier ranking. The model does not exist yet.
 - Parent or guardian email, personal email, and 9-digit ZIPs. Do not write those into the vault unless asked.
 
 ## Conflict still open
 
 The rules PDF says 12:00 p.m. EDT on October 26, 2026. The registration page, recorded in the brief, says 9:00 p.m. ET. Use noon until a newer official source says otherwise. Details on [[deadline]].
 
-## Next human actions
+## Next actions
 
-1. Look up the district and confirm it is hosting.
-2. Register in the 2026 portal.
-3. Record the demo from the beats on [[app idea]] and submit before noon Eastern on October 26, 2026.
-4. Build the smallest version that runs.
+1. Start at step 1 of [[action plan]]. Create the venv and install `xgboost` and `pandas`. Do not download a year until that import works.
+2. Look up the district and confirm it is hosting. That still blocks a real submission.
+3. Draft the demo and the six written answers on October 24–25. The [[app idea]] beats describe the ranking page. Replace them when the flagger runs.
+4. Submit before noon Eastern on October 26, 2026, if the district is hosting.

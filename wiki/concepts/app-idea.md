@@ -1,7 +1,7 @@
 ---
 type: concept
 title: App idea
-updated: 2026-10-15
+updated: 2026-10-17
 tags: [app, ranking, medicare]
 sources:
   - coffeezilla-100-billion-healthcare-fraud-transcript-clean.txt
@@ -74,4 +74,6 @@ Under 3 minutes. Names, app name, purpose, audience, tools, then the working dem
 
 Home district, school district, and whether either member is hosting. Do not invent them. Parent email, personal email, and 9-digit ZIPs stay out of this vault unless asked.
 
-Related: [[submission]], [[overview]], [[judging]].
+The build that starts from here is Medicare Fraud Flagger. The written idea is in `handoff-firm-flagging.md`. The reading at the start of that build is [[core idea]]. How far that build goes is [[scope]]. Where the handoff asks for 2013–2024, follow [[scope]].
+
+Related: [[submission]], [[overview]], [[judging]], [[core idea]].

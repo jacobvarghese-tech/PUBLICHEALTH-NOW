@@ -1,0 +1,17 @@
+{
+  "candidates": [
+    {
+      "spec": "08.json",
+      "name": "services_per_distinct_hcpcs",
+      "confirm_top1": 21,
+      "confirm_top5": 48,
+      "kept": false,
+      "note": "scored before the model cleanup; not kept"
+    }
+  ],
+  "best_confirm_top1": 26,
+  "best_spec": "blend_357_247.joblib",
+  "stops": [],
+  "baseline_select_top1": 93,
+  "baseline_select_fraud": 93
+}

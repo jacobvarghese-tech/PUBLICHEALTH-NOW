@@ -1,0 +1,8 @@
+year=2024
+source_rows=9249479
+grouped_rows=1206284
+received_bytes=3250282192
+expected_bytes=3250282192
+opened_bytes=3250282192
+gender_source=nppes_2026-10-12
+csv_url=https://data.cms.gov/sites/default/files/2026-05/b5ebab5a-f490-418a-9bce-4b9f31419356/PHY_R26_P05_V10_D24_Prov_Svc.csv

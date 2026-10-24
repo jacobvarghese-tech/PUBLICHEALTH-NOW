@@ -1,0 +1,54 @@
+provider_rows 2013: 909560
+provider_rows 2014: 938141
+non_missing_growth 2014: 845302
+provider_rows 2015: 968333
+non_missing_growth 2015: 870396
+provider_rows 2016: 1000924
+non_missing_growth 2016: 898516
+provider_rows 2017: 1032911
+non_missing_growth 2017: 928979
+non_missing_growth 2018: 954941
+fraud_rows 2013: 958
+fraud_rows 2014: 894
+fraud_rows 2015: 835
+fraud_rows 2016: 751
+fraud_rows 2017: 651
+fraud_rows 2018: 541
+fraud_rows 2019: 433
+fraud_rows 2020: 335
+fraud_rows 2021: 251
+fraud_rows 2022: 158
+fraud_rows 2023: 93
+training_fraud_rows: 5900
+training_clean_rows: 11531668
+installed_n_estimators_default: 100
+specialty_category_count: 132
+fit_fraud_rows: 5900
+fit_clean_rows: 53100
+2024 top 1% numerator: 8/48 beside 11/48
+2024 top 5% numerator: 19/48 beside 18/48
+1124725817: miss percentile 99.975238 prior 99.988902
+1639879034: miss percentile 99.616306 prior 99.945258
+final_counts_from_disk:
+provider_rows 2013: 909560
+provider_rows 2014: 938141
+provider_rows 2015: 968333
+provider_rows 2016: 1000924
+provider_rows 2017: 1032911
+non_missing_growth 2018: 954941
+fraud_rows 2013: 958
+fraud_rows 2014: 894
+fraud_rows 2015: 835
+fraud_rows 2016: 751
+fraud_rows 2017: 651
+fraud_rows 2018: 541
+fraud_rows 2019: 433
+fraud_rows 2020: 335
+fraud_rows 2021: 251
+fraud_rows 2022: 158
+fraud_rows 2023: 93
+clean_rows: 11531668
+2024 top 1% numerator: 8/48 beside 11/48
+2024 top 5% numerator: 19/48 beside 18/48
+1124725817: miss percentile 99.975238 prior 99.988902
+1639879034: miss percentile 99.616306 prior 99.945258

@@ -1,0 +1,16 @@
+{
+  "name": "nonparticipating_line_share",
+  "source_columns": [
+    "Place_Of_Srvc",
+    "HCPCS_Cd",
+    "HCPCS_Drug_Ind",
+    "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+    "Tot_Srvcs",
+    "Avg_Mdcr_Alowd_Amt",
+    "Avg_Mdcr_Pymt_Amt",
+    "Avg_Mdcr_Stdzd_Amt"
+  ],
+  "formula": "share of lines where Rndrng_Prvdr_Mdcr_Prtcptg_Ind is not Y",
+  "join_keys": ["provider_type", "npi", "nppes_provider_gender"],
+  "grain": "provider-year"
+}

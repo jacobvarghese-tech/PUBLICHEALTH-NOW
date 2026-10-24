@@ -1,0 +1,17 @@
+Paper name,CMS header name on disk,Role
+npi,Rndrng_NPI,group key
+provider_type,Rndrng_Prvdr_Type,group key
+nppes_provider_gender,filled from NPPES Provider Sex Code by Rndrng_NPI,group key
+medicare year,file year 2013 or 2014 or 2015,group key
+HCPCS,HCPCS_Cd,aggregated away
+place of service,Place_Of_Srvc,aggregated away
+line_srvc_cnt,Tot_Srvcs,numeric source
+bene_unique_cnt,Tot_Benes,numeric source
+bene_day_srvc_cnt,Tot_Bene_Day_Srvcs,numeric source
+average_submitted_chrg_amt,Avg_Sbmtd_Chrg,numeric source
+average_medicare_payment_amt,Avg_Mdcr_Pymt_Amt,numeric source
+
+Header files read: data/training/header_2013.txt, header_2014.txt, header_2015.txt.
+Those three headers match. None contains nppes_provider_gender or Rndrng_Prvdr_Gndr.
+Gender is a join, not a column already on the physician file.
+The six summaries (mean, sum, median, standard deviation, minimum, maximum) are derived after the group, from the five numeric source columns.

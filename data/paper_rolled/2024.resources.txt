@@ -1,0 +1,4 @@
+year=2024
+resources_url=https://data.cms.gov/data-api/v1/dataset/335e5f35-eca6-482d-87b3-f99883e213e3/resources
+csv_url=https://data.cms.gov/sites/default/files/2026-05/b5ebab5a-f490-418a-9bce-4b9f31419356/PHY_R26_P05_V10_D24_Prov_Svc.csv
+opened_bytes=3250282192

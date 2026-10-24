@@ -38,9 +38,9 @@ class LeieDownloadTest(unittest.TestCase):
             self.assertIn(column, header)
 
     def test_no_billing_year_file_was_saved(self) -> None:
+        # Step 2 must not put a billing-year CSV in the LEIE folder.
+        # data/rolled/ is owned by steps 3 and 4, so it is not asserted here.
         root = Path(__file__).resolve().parents[1]
-        rolled = root / "data" / "rolled"
-        self.assertFalse(rolled.exists(), "data/rolled/ must stay empty for this step")
         training = root / "data" / "training"
         names = [path.name for path in training.iterdir()]
         for name in names:

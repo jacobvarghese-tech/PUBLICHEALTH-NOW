@@ -1,0 +1,8 @@
+year=2019
+source_rows=9510840
+grouped_rows=1092019
+received_bytes=3176102801
+expected_bytes=3176102801
+opened_bytes=3176102801
+gender_source=nppes_2026-10-12
+csv_url=https://data.cms.gov/sites/default/files/2025-11/7befba27-752e-47a8-a76c-6c6d4f74f2e3/MUP_PHY_R25_P04_V20_D19_Prov_Svc.csv

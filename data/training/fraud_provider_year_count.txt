@@ -1,0 +1,1 @@
+Fraud provider-years in rolled 2019, 2020, 2021, 2022, 2023 whose NPI matches a 10-digit LEIE NPI with EXCLTYPE in 1128a1, 1128a3, 1128b6, 1128b7 and an exclusion year after the billing year: 1270

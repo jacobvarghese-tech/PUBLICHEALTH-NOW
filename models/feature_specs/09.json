@@ -1,0 +1,16 @@
+{
+  "name": "allowed_minus_payment",
+  "source_columns": [
+    "Place_Of_Srvc",
+    "HCPCS_Cd",
+    "HCPCS_Drug_Ind",
+    "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+    "Tot_Srvcs",
+    "Avg_Mdcr_Alowd_Amt",
+    "Avg_Mdcr_Pymt_Amt",
+    "Avg_Mdcr_Stdzd_Amt"
+  ],
+  "formula": "mean of Avg_Mdcr_Alowd_Amt minus Avg_Mdcr_Pymt_Amt",
+  "join_keys": ["provider_type", "npi", "nppes_provider_gender"],
+  "grain": "provider-year"
+}

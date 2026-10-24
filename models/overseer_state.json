@@ -1,0 +1,1 @@
+{"last_action":"check","best_spec":"blend_357_247.joblib","note":"Checked scoring processes; left feature_islands.py fit models/feature_specs/09.json (PID 24560) because CPU rose from 24.1 to 32.1 in 8s. No new fit started. best_confirm_top1 remains 26.","best":26}

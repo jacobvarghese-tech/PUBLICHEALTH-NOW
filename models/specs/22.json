@@ -1,0 +1,9 @@
+{
+  "n_estimators": 60,
+  "max_depth": 20,
+  "min_samples_leaf": 1,
+  "class_weight": "balanced",
+  "clean_per_fraud": 9,
+  "fit_years": [2016, 2017, 2018, 2019, 2020, 2021, 2022],
+  "random_state": 0
+}

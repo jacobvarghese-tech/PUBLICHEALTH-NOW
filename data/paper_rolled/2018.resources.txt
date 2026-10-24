@@ -1,0 +1,4 @@
+year=2018
+resources_url=https://data.cms.gov/data-api/v1/dataset/fb6d9fe8-38c1-4d24-83d4-0b7b291000b2/resources
+csv_url=https://data.cms.gov/sites/default/files/2025-11/5669eafb-f0b3-4dc5-be6d-abc09b480c2e/MUP_PHY_R25_P04_V20_D18_Prov_Svc.csv
+opened_bytes=3125246884

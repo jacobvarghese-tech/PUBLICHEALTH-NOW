@@ -1,0 +1,17 @@
+Source: https://download.cms.gov/nppes/NPPES_Data_Dissemination_October_2026_V2.zip
+Listed file date: 2026-10-12
+Listed size: 1,106.00 MB
+ZIP bytes: 1159720219
+CSV inside ZIP: npidata_pfile_20050523-20261011.csv
+NPI column: NPI
+Sex column: Provider Sex Code
+Mapped to: nppes_provider_gender
+Codes kept: M, F, blank. No unknown code was invented.
+Snapshot is later than the 2013-2015 physician files.
+Rows: 9852180
+M: 2298983
+F: 5159668
+Blank: 2340086
+Other codes blanked: 53443
+Other code X: 52017
+Other code U: 1426

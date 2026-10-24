@@ -1,0 +1,193 @@
+id="Tab1"> 
+<h5> Table 1. Description of Medicare features 
+ROW  | Feature  | Description  | Type 
+ROW  | npi  | Unique provider identification number  | Categorical 
+ROW  | provider_type  | Medical provider’s specialty (or practice)  | Categorical 
+ROW  | nppes_provider_gender  | Provider’s gender  | Categorical 
+ROW  | line_srvc_cnt  | Number of procedures/services the provider performed  | Numerical 
+ROW  | bene_unique_cnt  | Number of distinct Medicare beneficiaries receiving the service  | Numerical 
+ROW  | bene_day_srvc_cnt  | Number of distinct Medicare beneficiary/per day services performed  | Numerical 
+ROW  | average_submitted_chrg_amt  | Average of the charges that the provider submitted for the service  | Numerical 
+ROW  | average_medicare_payment_amt  | Average payment made to a provider per claim for the service performed  | Numerical 
+ROW  | exclusion  | Fraud labels from the LEIE database  | Categorical Open in a new tab 
+
+===== SECTION Sec6 class= =====
+
+<h4> LEIE 
+[Par22] The OIG, in accordance with Sections 1128 and 1156 of the Social Security Act, can exclude individuals and entities from federally funded healthcare programs for a designated period [ 21 ]. Excluded providers are forbidden from participating in programs, such as Medicare, for a minimum exclusion period. The LEIE is aggregated to the provider-level, thus does not have information regarding specific procedures related to fraudulent activities. Understanding the grouping, as with the Part B data, is important for data integration and/or class label generation. Even though the LEIE database contains excluded providers to be used as fraud labels, it is not all-inclusive where 38% of providers with fraud convictions continue to practice medicine and 21% were not suspended from medical practice despite their convictions [ 26 ]. We incorporate these excluded providers from the LEIE database [ 21 ] as labels to indicate fraud. There are different categories of exclusions, based on severity of the offense, described by various rule numbers. We do not use all exclusions, but rather filter the excluded providers by selected rules indicating more severe convictions and/or revocations. These rules are shown in Table 2 . 
+
+===== SECTION Tab2 class=tw xbox font-sm =====
+
+<h5> Table 2. LEIE exclusion rules 
+ROW  | Rule number  | Description  | Min. period 
+ROW  | 1128(a)(1)  | Conviction of program-related crimes  | 5 years 
+ROW  | 1128(a)(2)  | Conviction for patient abuse or neglect  | 5 years 
+ROW  | 1128(a)(3)  | Felony conviction due to healthcare fraud  | 5 years 
+ROW  | 1128(b)(4)  | License revocation or suspension  | 5 years 
+ROW  | 1128(c)(3)(g)(i)  | Conviction of 2 mandatory offenses  | 10 years 
+ROW  | 1128(c)(3)(g)(ii)  | Conviction on 3 or more mandatory offenses  | Indefinite Open in a new tab 
+
+===== SECTION Sec7 class= =====
+
+<h4> Data processing and fraud labeling 
+[Par23] As mentioned, the Medicare data is considered a procedure-level dataset, whereas the LEIE database only contains provider-level information with no reference to location or procedure performed. For our study, in order to obtain exact matches, we use only NPI to match fraud labels to the Medicare data. Future work may incorporate other approaches, such as fuzzy string matching, to possibly increase the number of fraud labels. In integrating fraud labels with the Medicare data, we only consider providers on the exclusion list as fraudulent and those not on the list as non-fraudulent providers. Additionally, the Medicare dataset is annual, whereas the LEIE database has a specific date (month/day/year) for when the exclusion starts and the length of the exclusion period. For example, if a provider is convicted for patient abuse or neglect (rule number 1128(a)(2)) beginning 1/1/2008, then, based on a minimum exclusion period of 5 years, this provider would have an exclusion period from 1/1/2008 to 1/1/2013. 
+[Par24] Because the Medicare dataset is at the procedure-level (NPI and HCPCS) but the LEIE database is at the provider- or NPI-level, we elect to aggregate the Medicare data to the provider-level for a one-to-one mapping of fraud labels from the LEIE database. Note that there is currently no known data source for fraud labels by provider and procedure procedure performed. The process for aggregating the Medicare data to the provider-level involved grouping the data by specialty (provider type), provider (NPI), gender, and Medicare year, aggregating over procedure (HCPCS) and place of service. To avoid too much information loss due to this aggregation, we derive additional numeric features, from the original five numeric features, to include the mean, sum, median, standard deviation, minimum, and maximum. It is important to note that all features are complete, except for standard deviation which contains NA indicating missing or not available values. The reason for this is the grouping creates individual, unique claims (i.e. instances) for any given year. The sample standard deviation of this single instance is NA, whereas the population standard deviation is 0 showing no claim variability. Given that there is a legitimate claim, we assume nothing is missing and replace standard deviation NA values with 0 to show that this single claim, in fact, has no claim-to-claim variability. In addition to the aforementioned numerical features, we include the specialty and gender categorical features. To build each learner with a mixture of numerical and categorical features, we transform the categorical by using one-hot encoding. This method uses the categorical values to generate dummy features with binary values indicating the presence of this variable. A value of one is assigned if a value is present otherwise zero, versus all other dummy features. This translates each of the original categorical values into distinct binary features. Note the original gender feature contains missing values which are represented by a value of 0 for both male and female. Table 3 summarizes the original Medicare data, the NPI-level aggregated data, and the NPI-level aggregated data with the one-hot encoded categorical features. 
+
+===== SECTION Tab3 class=tw xbox font-sm =====
+
+<h5> Table 3. Summary of Medicare datasets 
+ROW  | Dataset  | Instances  | Features 
+ROW  | Original  | 37,255,346  | 30 
+ROW  | NPI-level  | 3,692,555  | 35 
+ROW  | NPI-level (one-hot encoded)  | 3,692,555  | 126 Open in a new tab 
+[Par25] From the LEIE database, we first create the range of each exclusion period by adding the minimum length of the exclusion to the exclusion start date to get the exclusion end date. We then compare the month and year of the exclusion end date with any waiver or reinstatement dates. The smallest month and year is then assigned as the new exclusion end date. For example, if the exclusion end date is 2/12/2015 and there is a waiver date of 1/1/2013, then the new exclusion end date is changed to the earlier date of 1/1/2013. This accounts for providers that may still be in the exclusion period but received a waiver or reinstatement to use Medicare, thus no longer considered fraudulent on or after this waiver or reinstatement date. In order to avoid too few or too many fraud labels, we round the new exclusion end date to the nearest years based on the month. So, if the month is greater than 6 then the exclusion end year is increased to the following year, otherwise the current year is used. In this way, partial years are addressed with the assumption that if an exclusion end date occurs during the latter part of a year, the majority of that year can be assumed as fraud. Otherwise, very little of the year is before the exclusion end date, then we assume the provider claims in that year are not fraudulent. Figure 1 shows the distribution of exclusion end date frequency by month over all Medicare Part B years. The frequencies are generally uniform, i.e. March is similar to September. Therefore, a simple half-year rounding scheme is leveraged to better represent the fraud labels in a given year based on the monthly distribution. Again, this is because the Medicare Part B dataset only includes years, whereas the LEIE has the full date. The exclusion end dates are key to generating the fraud label mapping in the Medicare Part B data. 
+<h5> Fig. 1. Open in a new tab Monthly frequency of exclusion end dates 
+[Par26] The updated LEIE database is then joined with the Medicare Part B data based on NPI. A flag is created, initialized to false, to hold the fraud labels (where fraud is set to true). We then mark any provider as fraudulent if there claims year is prior to the exclusion end year. For example, if a provider’s exclusion start year is 2008, with a 5-year period, then the exclusion end date is 2013 which overlaps with the available Medicare years, thus 2012 and 2013 are labeled as fraud for that provider in those years. Note that providers can only be labeled as fraudulent if they are in the LEIE database and the exclusion period is within the 2012, 2013, 2014, and 2015 Medicare years, because these are the only years of Part B data currently available. By using a threshold where anything less than the exclusion end date is flagged as fraud, we can detect behaviors leading up to the fraud, as well as so-called improper payments made by excluded providers. Detecting the latter behavior is valid and can be considered as fraud per the False Claims Act (FCA) [ 39 ]. The final Part B dataset includes all known excluded providers marked via the exclusion class feature. There are 3,691,146 non-fraud and 1,409 fraud labels. This data is considered highly imbalanced with only 0.04% of instances being labeled as fraud. 
+
+===== SECTION Sec8 class= =====
+
+<h3> Class imbalance 
+[Par27] Since our Medicare dataset is severely imbalanced, we employ data sampling to mitigate the adverse effects of class imbalance [ 40 ]. The issue with class imbalance is that a learner tends to focus on the majority class (non-fraud), since the number of minority class (fraud) instances is so small thus do not offer sufficient discriminatory value. Data sampling is an effective means of improving learner performance on imbalance datasets by changing the class distributions in the training data [ 41 ]. Oversampling and undersampling are two general techniques for applying random data sampling for class imbalance. Oversampling balances classes by adding instances to the minority class via sampling with replacement. Undersampling reduces the size of the majority class by sampling without replacement. Another popular method for oversampling is Synthetic Minority Oversampling TEchnique (SMOTE) [ 42 ]. This approach generates artificial data using sampling with replacement and k-nearest neighbors to increase the size of the minority class. Any method to reduce the deleterious effects of class imbalance has both strengths and weaknesses. For undersampling, the primary weakness is the loss of potentially useful information in discarding instances from the majority class. Oversampling increases the overall size of the dataset, which can be a problem for a learner when using big data. With such a severely imbalanced dataset, oversampling creates too many duplicate instances of the minority class given the pool instances in this class is so small. Additionally, because oversampling can duplicate minority class instances, overfitting can be caused [ 43 ]. SMOTE suffers from an increase in data size, but, since this method uses artificial data and not exact instances, it is not as prone to overfitting. 
+[Par28] In our study, we use random undersampling (RUS) because it retains all of the fraud labels, it affords good performance (especially with big data), and has relatively few weaknesses [ 44 , 45 ]. We generate seven different class distribution (majority:minority) which include: 99.9:0.1, 99:1, 95:5, 90:10, 75:25, 65:35, and 50:50. The selected distributions, or ratios, were chosen because they provide a reasonable representation of the majority class and reduce loss of information relative to the minority class. Retaining only 1% of the minority class is close to the minority class percentage of 0.4% in the original NPI-level Medicare Part B dataset, and substantially reduces the size of the dataset and decreases the time needed to build each learner. Moreover, the class distributions vary levels of imbalance to a balanced 50:50 distribution, so we can better gauge learner performance using severely imbalanced and balanced data. It is not necessarily advantageous to use a fully balanced class distribution for severely imbalanced data, because it entails throwing away a large proportion of the original dataset population. Because we elected to use RUS, we repeat the data sampling 10 times, per distribution, in order to reduce the overall information loss by reducing the size of the majority class. Each repeat randomly samples a different set of instances to remove from the majority class, thus selecting more majority class instances across the repetitions. Table 4 details the number of instances for each of the training datasets for the class distributions. This indicates that as the percentage of fraud instances increases, the representation of the non-fraud instances decreases relative to the full dataset. 
+
+===== SECTION Tab4 class=tw xbox font-sm =====
+
+<h4> Table 4. Class distribution sample size 
+ROW  | Technique  | Fraud  | Non-fraud  | 
+ROW  | %  | #  | %  | #  | Total 
+ROW  | RUS  | 0.1  | 1,409  | 99.9  | 301,591  | 1,409,000 
+ROW  | RUS  | 1  | 1,409  | 99  | 139,491  | 140,900 
+ROW  | RUS  | 5  | 1,409  | 95  | 26,771  | 28,180 
+ROW  | RUS  | 10  | 1,409  | 90  | 12,681  | 14,090 
+ROW  | RUS  | 25  | 1,409  | 75  | 4,227  | 5,636 
+ROW  | RUS  | 35  | 1,409  | 65  | 2,617  | 4,026 
+ROW  | RUS  | 50  | 1,409  | 50  | 1,409  | 2,818 Open in a new tab 
+
+===== SECTION Sec9 class= =====
+
+<h3> Learners 
+[Par29] We use six different learners to assess fraud detection behavior across class distributions from severely imbalanced to balanced. Each learner is built and validated using the Weka machine learning software [ 24 ]. The default configurations and parameters are used with changes made when preliminary analysis indicated increased learner performance. Any additional learner optimization is left as future work. In this section, we briefly describe each learner and note any configuration changes herein. 
+[Par30] The Naive Bayes (NB) learner [ 46 ] determines the probability that an instance belongs to a particular class using Bayes’ theorem. NB makes an assumption that all features, and thus conditional probabilities, are independent from one another in deciding on the predicted class label. Logistic Regression (LR) uses a sigmoidal, or logistic, function to generate values from [0,1] that can be interpreted as class probabilities. LR is similar to linear regression but uses a different hypothesis class to predict class membership [ 47 ]. In Weka, we use the default LR setting for the ‘ridge’ parameter which is the penalized maximum likelihood estimation with a quadratic penalty function (also known as L2 regularization). K-nearest neighbors (KNN), also called instance-based learning or case-based reasoning, uses distance-based comparisons among instances [ 48 ]. The distance measure is critical for KNN performance, with Euclidean distance being the typical choice. The ‘distanceWeighting’ parameter was set to ‘Weight by 1/distance’ and the number of neighbors was set to 5 (called 5NN herein). 
+[Par31] Support vector machine (SVM) learner [ 49 ] creates a hyperplane to divide instances into two distinct groups, with the assumption that the classes are linearly separable. Support vectors are chosen to divide the instances in two groups by maximizing the distance between the classes. SVM uses regularization to avoid overfitting via the complexity parameter ‘c’. The Weka implementation of SVM incorporates sequential minimal optimization (SMO) for training SVM models. We set the complexity parameter ‘c’ to 5.0 and the ‘buildLogisticModels’ parameter to true. The C4.5 Decision Tree algorithm [ 50 ] uses a divide-and-conquer approach to split the data at each node based on the feature with the most information. The features at each node are automatically selected by minimizing entropy and maximizing information gain. Entropy can be seen as the measure of impurity or uncertainty of attributes, and information gain is a means to find the most informative attribute. The most important features are near the root node, with classification results found at the leaf nodes. In our experiments, we use ‘Laplace Smoothing’ and ‘no pruning’ which can lead to improved results on imbalanced data [ 51 ]. 
+[Par32] Our last learner is random forest (RF). This is an ensemble approach building multiple unpruned decision trees representing the forest. The classification results are calculated by combining the results of the individual trees, typically using majority voting [ 52 , 53 ]. RF generates random datasets via sampling with replacement to build each tree. The feature at each node is automatically selected to be the most discriminating feature based on entropy and information gain. Furthermore, RF incorporates feature subspace selection to randomly assign i features for each decision tree. Due to the ensemble nature of and randomness in RF, this method is not likely to overfit the data. We build each RF learner with 100 trees only (denoted as RF100), with preliminary analysis showing no significant difference between 100 and 500 trees. 
+
+===== SECTION Sec10 class= =====
+
+<h3> Performance metric 
+[Par33] The highly imbalanced nature of the Medicare dataset can make the selection of a meaningful performance metric challenging. To mitigate this issue in imbalanced data, we use AUC [ 54 ] to evaluate learner fraud detection performance which has been shown to be an effective metric for class imbalance [ 55 , 56 ]. The AUC, which indicates learner performance for binary classification, is calculated as the area under the receiver operating characteristic (ROC) curve. The ROC curve is used to characterize the trade-off between true positive (TP) rate, also known as recall or sensitivity, ( TP T P + F N ) and false positive (FP) rate ( FP F P + T N ), where FN and TN are the numbers of false negatives and true negatives, respectively. The ROC curve depicts a learner’s performance across all decision thresholds. The AUC is a single value that ranges from 0 to 1, where a perfect classifier results in an AUC of 1 and a value of 0.5 or less is equivalent to random guessing. 
+
+===== SECTION Sec11 class= =====
+
+<h3> Cross validation 
+[Par34] To evaluate learner performance, we incorporate k-fold cross-validation. The training data is divided into k-folds. A learner is trained on k - 1 folds and tested on the remaining fold, with this process repeated k times. This ensures all data is used in training and validation. To prevent folds with little to no minority class instances, we use stratified cross-validation [ 24 ] which tries to ensure that each class is approximately equally represented across each fold. Specifically, we use 5-fold cross-validation repeated 10 times. The average of the 5-fold cross-validation scores, across all 10 repeats, is used for the final learner performance results. The use of repeats helps to reduce bias due to bad random draws when creating the folds. 
+
+===== SECTION Sec12 class= =====
+
+<h3> Significance testing 
+[Par35] In order to provide additional rigor around our AUC performance results, we use hypothesis testing to show the statistical significance of the Medicare fraud detection results. Both ANalysis Of VAriance (ANOVA) [ 57 ] and post hoc analysis via Tukey’s Honestly Significant Different (HSD) test [ 58 ] are used in our study. ANOVA is a statistical test determining whether the means of several groups (or factors) are equal. Tukey’s HSD test determines factor means that are significantly different from each other. This test compares all possible pairs of means using a method similar to a t-test, where statistically significant differences are grouped by assigning different letter combinations (e.g. group a is significantly different than group b). 
+
+===== SECTION Sec13 class= =====
+
+<h2> Results and discussion 
+[Par36] In this section, we present the results of our study focusing on fraud detection performance across the varying levels of class imbalance. In particular, we ascertain the best performing learner for detecting Medicare fraud and discuss the behavior of each learner over the class distribution. Table 5 shows the AUC results by learner and class distribution, with the highest scores in boldface for each class distribution. RF100 has the highest average AUC scores for all class distributions except for the most imbalanced ratio, with the highest overall AUC of 0.87302 at the 90:10 distribution. LR has the next highest performance results, with the best score for the 99:0.1 imbalanced class distribution. NB has the worst overall fraud detection performance, consistently poor for all distributions. The ensemble nature of RF100 with the randomness introduced in the dataset and automatic feature selection makes it robust to noise and overfitting which may contribute to its good overall fraud detection performance using the Medicare Part B data. Furthermore, regularization in LR and automatic feature selection in C4.5 (second and third best overall results, respectively) could also contribute to their relatively good detection performance over the other learners that do not perform any feature selections or modifications. 
+
+===== SECTION Tab5 class=tw xbox font-sm =====
+
+<h3> Table 5. Learner AUC results by class distribution 
+ROW  | Class distribution  | 5NN  | C4.5  | LR  | NB  | RF100  | SVM 
+ROW  | 99.9:0.1  | 0.60397  | 0.79967  | 0.80768  | 0.61770  | 0.74375  | 0.63735 
+ROW  | 99:1  | 0.66341  | 0.79682  | 0.81373  | 0.61991  | 0.85069  | 0.62875 
+ROW  | 95:5  | 0.74348  | 0.79379  | 0.81877  | 0.62461  | 0.87246  | 0.68360 
+ROW  | 90:10  | 0.77650  | 0.79036  | 0.81987  | 0.62422  | 0.87302  | 0.60361 
+ROW  | 75:25  | 0.80332  | 0.78417  | 0.82047  | 0.63014  | 0.86688  | 0.78512 
+ROW  | 65:35  | 0.80551  | 0.77854  | 0.81897  | 0.63116  | 0.86136  | 0.78989 
+ROW  | 50:50  | 0.79865  | 0.77126  | 0.81675  | 0.62594  | 0.85299  | 0.79474 Open in a new tab 
+[Par37] Figure 2 depicts the AUC trends for each learner for each class distribution, from imbalanced to balanced. Recall that with RUS, the number of minority class instances is equal that of the full dataset for all class distributions with modifications made to the majority class only. Thus, for these learners, the trend indicates datasets with a higher number of majority class (non-fraud) instances, while retaining a good minority class representation, produce similar or better AUC results. In other words, the balanced 50:50 class distribution exhibits performance similar to that of the more imbalanced distributions, such as 90:10, 95:5, and 99:1. Even so, AUC results for RF100, 5NN, and SVM decrease significantly as the training datasets becoming more imbalanced. Both 5NN and SVM perform quite poorly below the 75:25 class ratio indicating an inability to effectively discriminate non-fraud and fraud instances requiring more balanced datasets. For SVM, since only a limited number of fraud instances are represented in the entire dataset, there are more possible options for the separating hyperplane thus more likely to classify new instances into the non-fraud class. The 5NN learner’s poor performance could be due to overfitting the training data or the poor detection of global patterns in the dataset, as this method focuses on the nearest neighbors. Both of these learners, given more class imbalance, will tend to predict the most represented class. 
+<h3> Fig. 2. Open in a new tab AUC trends by Learner 
+[Par38] Interestingly, for LR, C4.5, and NB, learner performance does not exhibit the same AUC variability across the different class distributions. This means that these learners perform similarly with either more balanced or imbalanced distributions. For instance, the 50:50 class distribution AUC is similar to the 99:0.01 class distribution. The C4.5 decision tree learner performs slightly better as the level of class imbalance increases. Additionally, LR and C4.5 outperform RF100 below the 99:1 class distribution, with LR being the most consistent learner across class distributions. For these learners with less variability in performance across class distributions, the fraud instances, from our previously discussed labeling process, provide adequate feature discrimination allowing these learners to detect the minority class patterns. These learners are less sensitive to changes in class distribution, especially with increasing class imbalance, showing similar fraud detection performance. 
+[Par39] Table 6 shows the ANOVA test results with two factors: Learner and Class Distribution. The results indicate that each factor, and their interactions, are significant at a 5% significance level. In order to evaluate group differences, a Tukey’s HSD test is performed. Table 7 summarizes the significance of learner performance across all class distributions. RF100 is significantly better than all other learners followed by LR and C4.5. Table 8 shows the Tukey’s HSD results for each class distribution across all learners. The 75:25, 65:35, and 50:50 distributions are significantly better across all learners. This seems to indicate that more balanced datasets give improved fraud detection performance. And given that the 50:50 distribution is only slightly worse than some of the more imbalanced class distribution for each learner (with the exception of C4.5), we would expect it to be among the better class distributions. This is further skewed by the poor performance of 5NN and SVM below the 75:25 class distribution. With these patterns in mind, these post hoc test results do not necessarily imply that the 50:50 is the best distribution for detecting fraudulent activities. 
+
+===== SECTION Tab6 class=tw xbox font-sm =====
+
+<h3> Table 6. ANOVA test results 
+ROW  |  | Df  | Sum Sq  | Mean Sq  | F value  | Pr(<F) 
+ROW  | Learner  | 5  | 2.3033  | 0.4607  | 4139.6  | < 2e−16 
+ROW  | Class distribution  | 6  | 0.3248  | 0.0541  | 486.4  | < 2e−16 
+ROW  | Learner:class distribution  | 30  | 0.6127  | 0.0204  | 183.5  | < 2e−16 
+ROW  | Residuals  | 378  | 0.0421  | 0.0001  |  | Open in a new tab 
+
+===== SECTION Tab7 class=tw xbox font-sm =====
+
+<h3> Table 7. Tukey’s HSD learner results 
+ROW  | Learner  | Group  | AUC  | SD  | r  | Min  | Max 
+ROW  | RF100  | a  | 0.84588  | 0.04299  | 70  | 0.73184  | 0.87809 
+ROW  | LR  | b  | 0.81661  | 0.00509  | 70  | 0.80421  | 0.82449 
+ROW  | C4.5  | c  | 0.78780  | 0.01027  | 70  | 0.76329  | 0.80438 
+ROW  | 5NN  | d  | 0.74212  | 0.07374  | 70  | 0.59613  | 0.81067 
+ROW  | SVM  | e  | 0.70329  | 0.08011  | 70  | 0.57333  | 0.80285 
+ROW  | NB  | f  | 0.62481  | 0.01900  | 70  | 0.58679  | 0.68260 Open in a new tab 
+
+===== SECTION Tab8 class=tw xbox font-sm =====
+
+<h3> Table 8. Tukey’s HSD class distribution results 
+ROW  | Class distribution  | Group  | AUC  | SD  | r  | Min  | Max 
+ROW  | 75:25  | a  | 0.78168  | 0.07449  | 60  | 0.60310  | 0.87122 
+ROW  | 65:35  | a  | 0.78091  | 0.07299  | 60  | 0.59701  | 0.86816 
+ROW  | 50:50  | a  | 0.77672  | 0.07286  | 60  | 0.58937  | 0.86045 
+ROW  | 95:05  | b  | 0.75612  | 0.08495  | 60  | 0.59932  | 0.87809 
+ROW  | 90:10  | c  | 0.74793  | 0.10114  | 60  | 0.57333  | 0.87705 
+ROW  | 99:01  | d  | 0.72888  | 0.09519  | 60  | 0.58679  | 0.86023 
+ROW  | 99.9:0.1  | e  | 0.70169  | 0.08627  | 60  | 0.59108  | 0.81047 Open in a new tab 
+[Par40] Because half of the learners showed little variability in AUC across the class distributions, we assess the significance of varying the class distributions per learner. So, unlike the results in Table 8 which are across all learners, we now focus on each learner and their detection behavior for the different class distributions. Table 9 shows that the 75:25, 65:35, and 50:50 are all statistically similar for 5NN, LR, NB, and SVM, thus the high performance across all learners. The best RF100 class distributions, 99:10 and 99:5, are also higher performers along with LR which both provide significantly better fraud detection performance over the other learners and class distributions. Therefore, with the good performance of RF100, and to some extent LR, with more imbalanced datasets, we recommend using the 90:10 class distribution for Medicare Part B fraud detection. The use of this more imbalanced dataset ensures less loss of information, relative to the original dataset, by retaining more of the majority class instances unlike the balanced 50:50 class distribution. 
+
+===== SECTION Tab9 class=tw xbox font-sm =====
+
+<h3> Table 9. Tukey’s HSD by learner results 
+ROW  | Learner  | Class distribution  | AUC  | Group  | Learner  | Class distribution  | AUC  | Group 
+ROW  | RF100  | 90:10  | 0.87302  | a  | C4.5  | 99.9:0.1  | 0.79967  | a 
+ROW  | 95:5  | 0.87246  | ab  | 99:1  | 0.79682  | ab 
+ROW  | 75:25  | 0.86688  | bc  | 95:5  | 0.79379  | bc 
+ROW  | 65:35  | 0.86136  | c  | 90:10  | 0.79036  | c 
+ROW  | 50:50  | 0.85299  | d  | 75:25  | 0.78417  | d 
+ROW  | 99:1  | 0.85069  | d  | 65:35  | 0.77854  | e 
+ROW  | 99.9:0.1  | 0.74375  | e  | 50:50  | 0.77126  | f 
+ROW  | 5NN  | 65:35  | 0.80551  | a  | LR  | 75:25  | 0.82047  | a 
+ROW  | 75:25  | 0.80332  | ab  | 90:10  | 0.81987  | a 
+ROW  | 50:50  | 0.79865  | b  | 65:35  | 0.81897  | a 
+ROW  | 90:10  | 0.77650  | c  | 95:5  | 0.81877  | a 
+ROW  | 95:5  | 0.74348  | d  | 50:50  | 0.81675  | ab 
+ROW  | 99:1  | 0.66341  | e  | 99:1  | 0.81373  | b 
+ROW  | 99.9:0.1  | 0.60397  | f  | 99.9:0.1  | 0.80768  | c 
+ROW  | NB  | 65:35  | 0.63116  | a  | SVM  | 50:50  | 0.79474  | a 
+ROW  | 75:25  | 0.63014  | a  | 65:35  | 0.78989  | a 
+ROW  | 50:50  | 0.62594  | a  | 75:25  | 0.78512  | a 
+ROW  | 95:5  | 0.62461  | a  | 95:5  | 0.68360  | b 
+ROW  | 90:10  | 0.62422  | a  | 99.9:0.1  | 0.63735  | c 
+ROW  | 99:1  | 0.61991  | a  | 99:1  | 0.62875  | c 
+ROW  | 99.9:0.1  | 0.61770  | a  | 90:10  | 0.60361  | d Open in a new tab 
+[Par41] To be effectively incorporated into a real-word fraud detection scenario, a learner should be able to detect actual fraud cases (as demonstrated herein using AUC) and provide insight into how predictions are being made. Different learners provide differing levels of global and local interpretations for extrapolating meaning from their predictions. The former allows a learner to describe a prediction across all instances, whereas the latter explains predictions for a local region (i.e. a single instance). For example, LR and C4.5 decision tree allows for both global and local interpretations, with the coefficients of LR describing feature contributions towards each prediction and a decision tree’s paths outlining the features used when making predictions. This type of learner interpretability can provide important information for investigators in further examining possible fraudulent cases. As mentioned, we recommend the RF learner due to the accuracy, based on the AUC metric, of detecting Medicare Part B fraud. But, unfortunately, because RF is an ensemble of trees and thus not easily interpretable, directly explaining RF from a global perspective is not possible (unlike a single decision tree or logistic regression learner). Feature importance, however, can be derived from a trained learner and represent a measure of the impact a feature has on the overall prediction. Unlike the regression coefficients, the important features from a RF learner do not indicate how a feature may impact the results but simply importance related to other features. It is, however, possible to explore the path traversed for a particular instance and its associated prediction [ 59 , 60 ] to indicate both the importance of certain features and how they may affect predictions (providing limited global interpretations). This is not a perfect solution, as this interpretation is not truly local or global, but does provide more meaningful information on fraud-related predictions. Even so, we have demonstrated that the models that can be interpreted both globally and locally (e.g. C4.5 and LR) have significantly worse fraud detection performance than the top performing RF learner. Future research will include performing additional experiments to assess feature importance and provide estimates for local and global interpretability. 
+
+===== SECTION Sec14 class= =====
+
+<h2> Conclusion 
+[Par42] The problem of healthcare fraud is of critical concern to all U.S. citizens. The monetary losses due to fraud are estimated in the billions of dollars, which negatively impact the U.S. government and beneficiaries. In particular, due to the increase in the elderly population, programs such as Medicare are becoming increasingly important and susceptible to fraud. Given the importance of Medicare, combating fraud is an essential part in providing quality healthcare for the elderly. In this study, we focus on detecting fraudulent provider claims in the Medicare Part B big dataset. We provide a detailed discussion on data processing and the mapping of fraud labels using excluded providers from the LEIE database. In particular, we discuss the differences in Part B and LEIE data aggregation and a method to more accurately map fraud labels. In addition, the disparities in dates between the datasets are reviewed with a unique method to reduce under- or over-labeling fraudulent instances. From this processed and labeled big data, we generate seven different class distributions to help mitigate the issue of class imbalance, due to the limited number of known fraudulent providers. For each of these distributions, we assess six different learners. Overall, RF100 with the 90:10 class distribution is the best learner with a 0.873 AUC. Furthermore, we show that the 50:50 balanced class distribution does not lead to the best performance, for any learner, and is similar to that of more imbalanced class distributions. The better performing methods, like RF100 and LR, perform better with some imbalance indicating that a better representation of the majority (non-fraud) class can increase performance. We show statistically significant differences between all the learners, as well as differences in class distributions for each learner which further supports the recommendation to use RF100. Lastly, we discuss interpreting learner fraud predictions and show there are possible implementations that provide additional insights into fraud predictions that could be used for further investigations into possible fraudulent providers. Future work includes adding other Medicare-related data sources, such as Medicare Part D, using more data sampling methods for class imbalance, and testing other feature selection and engineering approaches. Furthermore, if possible, the recommended RF learner should be compared to other Medicare fraud detection methods found in the related literature [ 61 ]. 
+
+===== SECTION ack1 class=ack =====
+
+<h2> Authors' contributions The authors would like to thank the Editor-in-Chief and the two reviewers for their insightful evaluation and constructive feedback of this paper, as well as the members of the Data Mining and Machine Learning Laboratory, Florida Atlantic University, for their assistance in the review process. We acknowledge partial support by the NSF (CNS-1427536). Opinions, findings, conclusions, or recommendations in this paper are the authors’ and do not reflect the views of the NSF. All authors read and approved the final manuscript. 
+
+===== SECTION d29e2260 class= =====
+
+<h3> Competing interests All authors declare that they have no Competing interests. 
+
+===== SECTION d29e2265 class= =====
+
+<h3> Ethics approval and consent to participate The article does not contain any studies with human participants or animals performed by any of the authors. 
+
+===== SECTION d29e2270 class= =====
+
+<h3> Publisher’s Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations. 
+
+===== SECTION _ci93_ class=contrib-info =====
+
+<h2> Contributor Information Richard A. Bauder, Email: rbauder2014@fau.edu Taghi M. Khoshgoftaar, Email: khoshgof@fau.edu 

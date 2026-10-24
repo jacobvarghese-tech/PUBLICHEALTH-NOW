@@ -4,3 +4,18 @@
 .trash/
 *.tmp
 .playwright-mcp/
+.venv/
+__pycache__/
+*.pyc
+
+# Public Medicare files and rebuilt indexes. See DATA.md.
+data/raw/*.csv
+data/raw/*.sqlite
+data/paper_rolled/*.csv
+data/training/UPDATED.csv
+data/training/*.csv
+data/training/physician_2013_2023.csv
+data/nppes/*.csv
+data/nppes/*.zip
+app/data/search.sqlite
+models/**/*.joblib

@@ -1,0 +1,17 @@
+{
+  "name": "facility_line_share_and_distinct_hcpcs_count",
+  "names": ["facility_line_share", "distinct_hcpcs_count"],
+  "source_columns": [
+    "Place_Of_Srvc",
+    "HCPCS_Cd",
+    "HCPCS_Drug_Ind",
+    "Rndrng_Prvdr_Mdcr_Prtcptg_Ind",
+    "Tot_Srvcs",
+    "Avg_Mdcr_Alowd_Amt",
+    "Avg_Mdcr_Pymt_Amt",
+    "Avg_Mdcr_Stdzd_Amt"
+  ],
+  "formula": "facility line share and distinct HCPCS count",
+  "join_keys": ["provider_type", "npi", "nppes_provider_gender"],
+  "grain": "provider-year"
+}

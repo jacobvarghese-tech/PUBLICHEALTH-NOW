@@ -1,0 +1,6 @@
+pandas==3.0.6
+scikit-learn==1.9.1
+xgboost==3.4.1
+openai==2.54.0
+dspy==3.4.1
+gepa==0.1.4

@@ -1,0 +1,1215 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="icon" type="image/ico" href="/static/img/favicon.c3505f52f923.ico">
+
+        <link rel="canonical" href="https://oig.hhs.gov/exclusions/leie-database-supplement-downloads/"/>
+
+        
+            
+            
+
+    
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LEIE Database &amp; Supplement Downloads">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://oig.hhs.gov/static/img/oig-logo.177475b5e761.jpg">
+
+    <meta name="twitter:site" content="@oigathhs">
+    <meta name='twitter:image:alt' content='U.S. Department of Health and Human Services Office of the Inspector General' />
+
+
+
+    
+<meta property="og:url" content="https://oig.hhs.gov/exclusions/leie-database-supplement-downloads/">
+<meta property="og:title" content="LEIE Database &amp; Supplement Downloads">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="Office of Inspector General | Government Oversight | U.S. Department of Health and Human Services">
+
+<meta property="og:image" content="https://oig.hhs.gov/static/img/oig-logo.177475b5e761.jpg">
+
+<meta property="og:image:width" content="760">
+<meta property="og:image:height" content="760">
+
+
+
+    <meta property='og:image:alt' content='U.S. Department of Health and Human Services Office of the Inspector General' />
+    <meta property='og:type' content='article' />
+
+
+
+    <title>LEIE Database &amp; Supplement Downloads | Office of Inspector General | Government Oversight | U.S. Department of Health and Human Services</title>
+    <meta name="description" content="">
+
+    <meta property="article:published_time" content="2026-04-10T11:11:18.728000-04:00" />
+    <meta property="article:modified_time" content="2026-10-09T09:03:42.839672-04:00" />
+
+
+
+        
+
+        
+
+        
+        <script>
+            const docElem=window.document.documentElement,loadingClass="usa-js-loading";function addLoadingClass(){docElem.className+=` ${loadingClass}`}function revertClass(){docElem.className=docElem.className.replace(loadingClass,"")}if("querySelector"in window.document&&"addEventListener"in window){addLoadingClass();const e=setTimeout(revertClass,8e3);let s=100;const n=()=>{setTimeout(()=>{s+=1,"undefined"!=typeof uswdsPresent?(clearTimeout(e),setTimeout(revertClass,100)):s>0&&n()},100)};n()}
+        </script>
+
+        
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5DCJS81Y5"></script>
+        <script>   window.dataLayer = window.dataLayer || [];   function gtag(){dataLayer.push(arguments);}   gtag('js', new Date());   gtag('config', 'G-W5DCJS81Y5'); </script>
+        
+
+        
+        <link rel="stylesheet" type="text/css" href="/static/scss/theme.cef9d26cbbac.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/oig_hhs_gov_pep.c2b9ddbb091e.css">
+
+        
+        
+
+
+        
+            
+        
+
+    </head>
+
+    <body class="">
+        
+            
+        
+
+        
+            
+            
+
+<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+
+<section class="usa-banner" aria-label="Official government website">
+    <div class="usa-accordion">
+        <header class="usa-banner__header">
+            <div class="usa-banner__inner">
+                <div class="grid-col-auto">
+                    <img class="usa-banner__header-flag" src="/static/img/us_flag_small.be327dc2791d.png" alt="U.S. flag">
+                </div>
+                <div class="grid-col-fill tablet:grid-col-auto">
+                    <p class="usa-banner__header-text">An official website of the United States government</p>
+                    <p class="usa-banner__header-action print-display-none" aria-hidden="true">Here’s how you know</p>
+                </div>
+                <button class="usa-accordion__button usa-banner__button" aria-expanded="false" aria-controls="gov-banner">
+                    <span class="usa-banner__button-text">Here’s how you know</span>
+                </button>
+            </div>
+        </header>
+        <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+            <div class="grid-row grid-gap-lg">
+                <div class="usa-banner__guidance tablet:grid-col-6">
+                    <img class="usa-banner__icon usa-media-block__img" src="/static/img/icon-dot-gov.42b4ac468597.svg" role="img" alt="" aria-hidden="true">
+                    <div class="usa-media-block__body">
+                        <p>
+                            <strong>Official websites use .gov</strong>
+                            <br />
+                            A <strong>.gov</strong> website belongs to an official government organization in the United States.
+                        </p>
+                    </div>
+                </div>
+                <div class="usa-banner__guidance tablet:grid-col-6">
+                    <img class="usa-banner__icon usa-media-block__img" src="/static/img/icon-https.73abd86624ca.svg" role="img" alt="" aria-hidden="true">
+                    <div class="usa-media-block__body">
+                        <p>
+                            <strong>Secure .gov websites use HTTPS</strong>
+                            <br />
+                            A <strong>lock</strong> ( <span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64" class="usa-banner__lock-image" role="img" aria-labelledby="banner-lock-title banner-lock-description" focusable="false"><title id="banner-lock-title">Lock</title><desc id="banner-lock-description">A locked padlock</desc><path fill="#000000" fill-rule="evenodd" d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" /></svg></span> ) or <strong>https://</strong> means you’ve safely connected to the .gov website. Share sensitive information only on official, secure websites.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+
+<header class="usa-header usa-header--extended bg-primary-darker">
+    <div class="usa-navbar">
+        <div class="usa-logo site-logo" id="extended-logo">
+            <a href="/" class="usa-logo__text">
+                <span aria-hidden="true" class="site-title-short print-display-none">HHS-OIG</span>
+                <span class="site-title">
+                    <span class="site-title-agency">U.S. Department of Health and Human Services</span>
+                    <span class="site-title-department">Office of Inspector General</span>
+                </span>
+            </a>
+        </div>
+        <div class="navbar--container usa-search usa-search--small display-none desktop:display-flex">
+            
+
+<form id="search_form" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get" class="float-none text-middle desktop:margin-right-3">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <div role="search">
+        <label class="usa-sr-only" for="query">Search</label>
+        <input id="query" type="search" name="query" autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input">
+        <input type="hidden" name="affiliate" id="affiliate" value="hhs_oig">
+        <button class="usa-button" type="submit">
+            <img src="/static/img/usa-icons-bg/search--white.cebf50fee031.svg" class="usa-search__submit-icon" alt="Search">
+        </button>
+    </div>
+</form>
+
+    
+        <div class="buttons margin-top-3 desktop:margin-top-0">
+            <a class="usa-button usa-button--secondary bg-secondary-dark hover:bg-secondary-darker padding-x-2 padding-y-1 margin-right-0" href="https://oig.hhs.gov/fraud/report-fraud/">
+                Report Fraud, Waste, &amp; Abuse
+            </a>
+        </div>
+    
+
+
+        </div>
+        <button class="usa-menu-btn print-display-none">Menu</button>
+    </div>
+    <nav aria-label="Primary navigation" class="usa-nav bg-white">
+        <div class="usa-nav__inner">
+            <button class="usa-nav__close">
+                <img src="/static/img/close.fe3f13f6b9f4.svg" alt="close">
+            </button>
+            
+                
+
+<ul class="usa-nav__primary usa-accordion">
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link  " aria-expanded="false" aria-controls="toggle_submenu_1">
+                    <span>About OIG</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_1" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/about-oig/">
+                About OIG
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/leadership/">
+                    Leadership
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/organization-chart/">
+                    Organization Chart
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/strategic-plan/">
+                    Strategic Plan
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/oig-budget/">
+                    OIG Budget
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/downloadable-resources-and-applications/">
+                    Downloadable Resources and Applications
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/contact-us/">
+                    Contact Us
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/hhs-oig-impact/">
+                    HHS-OIG Impact
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/about-oig/whistleblower/">
+                    Whistleblower Protection Information
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link  " aria-expanded="false" aria-controls="toggle_submenu_6">
+                    <span>Reports</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_6" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/reports/">
+                Reports
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/all/">
+                    All Reports and Publications
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/work-plan/">
+                    Work Plan
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/recommendations/">
+                    Recommendations
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="https://oig.hhs.gov/reports-and-publications/budget/index.asp">
+                    Budget
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/sar/">
+                    Semiannual Report to Congress
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/tmcs/">
+                    Top Management and Performance Challenges Facing HHS
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/federal-register/">
+                    Federal Register
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/regulatory-authorities/">
+                    Regulatory Authorities
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/reports/featured/">
+                    Featured Topics
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link  " aria-expanded="false" aria-controls="toggle_submenu_4">
+                    <span>Fraud</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_4" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/fraud/">
+                Fraud
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/consumer-alerts/">
+                    Consumer Alerts
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/contract-fraud/">
+                    Contract Fraud
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/enforcement/">
+                    Enforcement Actions
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/fraud-risk-spectrum/">
+                    Fraud Risk and Heightened Scrutiny
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/fugitives/">
+                    Fugitives
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/grant/">
+                    Grant Fraud
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/medicaid-fraud-control-units-mfcu/">
+                    Medicaid Fraud Control Units
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/strike-force/">
+                    Medicare Fraud Strike Force
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/care/">
+                    Operation CARE
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/state-false-claims-act-reviews/">
+                    State False Claims Act Reviews
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/fraud/report-fraud/">
+                    Report Fraud, Waste, and Abuse
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link  " aria-expanded="false" aria-controls="toggle_submenu_9">
+                    <span>Compliance</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_9" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/compliance/">
+                Compliance
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/compliance-guidance/">
+                    Compliance Guidance
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/corporate-integrity-agreements/">
+                    Corporate Integrity Agreements
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/advisory-opinions/">
+                    Advisory Opinions
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/accountable-care-organizations/">
+                    Accountable Care Organizations
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/open-letters/">
+                    Open Letters
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/rat-stats/">
+                    RAT-STATS - Statistical Software
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/safe-harbor-regulations/">
+                    Safe Harbor Regulations
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/self-disclosure-info/">
+                    Self-Disclosure Information
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/alerts/">
+                    Special Fraud Alerts, Bulletins, and Other Guidance
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/physician-education/">
+                    A Roadmap for New Physicians
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/compliance/single-audits/">
+                    Single Audits
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/faqs">
+                    Frequently Asked Questions (FAQs)
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link ancestor usa-current" aria-expanded="false" aria-controls="toggle_submenu_7">
+                    <span>Exclusions</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_7" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/exclusions/">
+                Exclusions
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/leie-quick-tips-instructions/">
+                    LEIE Quick Tips &amp; Instructions
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="https://exclusions.oig.hhs.gov/">
+                    Online Searchable Database
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/leie-database-supplement-downloads/">
+                    LEIE Database &amp; Supplement Downloads
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/special-advisory-bulletin-and-other-guidance/">
+                    Special Advisory Bulletin and Other Guidance
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/waivers/">
+                    Waivers
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/about-reinstatements/">
+                    About Reinstatements
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/working-with-federal-and-state-partners-on-health-care-exclusions-2/">
+                    Working With Federal and State Partners on Health Care Exclusions
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/exclusions/guidance-for-state-medicaid-agencies/">
+                    Guidance for State Medicaid Agencies
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="https://oig.hhs.gov/faqs/exclusions-faq.asp">
+                    Frequently Asked Questions
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="https://oig.hhs.gov/about-oig/contact-us/#exclusions">
+                    Contact the Exclusions Program
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link  " aria-expanded="false" aria-controls="toggle_submenu_5">
+                    <span>Newsroom</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_5" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/newsroom/">
+                Newsroom
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/whats-new/">
+                    What&#x27;s New
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/news-releases-articles/">
+                    News Releases &amp; Articles
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/media-materials/">
+                    Media Materials
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/testimony/">
+                    Testimony
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/speeches/">
+                    Speeches
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/oig-podcasts/">
+                    Podcasts
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/newsroom/videos/">
+                    Videos
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+        <li class="usa-nav__primary-item">
+            
+                <button class="usa-accordion__button usa-nav__link  " aria-expanded="false" aria-controls="toggle_submenu_2">
+                    <span>Careers</span>
+                </button>
+            
+            
+                
+
+
+    <ul id="toggle_submenu_2" class="usa-nav__submenu" hidden>
+        <li class="usa-nav__submenu-item">
+            <a href="/careers/">
+                Careers
+            </a>
+        </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/careers/internship-opportunities/">
+                    Internship Opportunities
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/careers/the-fair-chance-to-compete-for-jobs-act/">
+                    The Fair Chance to Compete for Jobs Act
+                </a>
+            </li>
+        
+            <li class="usa-nav__submenu-item">
+                <a href="/careers/office-of-investigations-positions/">
+                    Office of Investigations Positions
+                </a>
+            </li>
+        
+    </ul>
+
+
+            
+        </li>
+    
+</ul>
+
+            
+            <div class="usa-nav__secondary usa-search usa-search--small">
+                
+                    
+
+<form id="secondary_search_form" action="https://search.usa.gov/search" accept-charset="UTF-8" method="get" class="float-none text-middle desktop:margin-right-3">
+    <input name="utf8" type="hidden" value="&#x2713;" />
+    <div role="search">
+        <label class="usa-sr-only" for="secondary_query">Search</label>
+        <input id="secondary_query" type="search" name="query" autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input">
+        <input type="hidden" name="affiliate" id="secondary_affiliate" value="hhs_oig">
+        <button class="usa-button" type="submit">
+            <img src="/static/img/usa-icons-bg/search--white.cebf50fee031.svg" class="usa-search__submit-icon" alt="Search">
+        </button>
+    </div>
+</form>
+
+    
+        <div class="buttons margin-top-3 desktop:margin-top-0">
+            <a class="usa-button usa-button--secondary bg-secondary-dark hover:bg-secondary-darker padding-x-2 padding-y-1 margin-right-0" href="https://oig.hhs.gov/fraud/report-fraud/">
+                Report Fraud, Waste, &amp; Abuse
+            </a>
+        </div>
+    
+
+
+                
+            </div>
+        </div>
+    </nav>
+    <div class="usa-overlay"></div>
+</header>
+
+            
+        
+
+        
+            <main class="main" id="main-content">
+                
+
+
+
+
+                
+    
+    
+    
+    
+        <div class="grid-container usa-section usa-section--breadcrumbs">
+            
+                <div class="grid-row grid-gap">
+                    <div class="grid-col-fill margin-bottom-2 desktop:margin-bottom-4 usa-prose">
+                        
+
+
+    <nav class="usa-breadcrumb bg-transparent" aria-label="Breadcrumbs">
+        <ol class="usa-breadcrumb__list">
+            
+                
+                    <li class="usa-breadcrumb__list-item">
+                        <a href="/" class="usa-breadcrumb__link">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                
+            
+                
+                    <li class="usa-breadcrumb__list-item">
+                        <a href="/exclusions/" class="usa-breadcrumb__link">
+                            <span>Exclusions Program</span>
+                        </a>
+                    </li>
+                
+            
+                
+                    <li class="usa-breadcrumb__list-item usa-current" aria-current="page">
+                        <span>LEIE Database &amp; Supplement Downloads</span>
+                    </li>
+                
+            
+        </ol>
+    </nav>
+
+
+                    </div>
+                </div>
+            
+            <div class="grid-row grid-gap">
+                
+                <div class="grid-col-fill margin-bottom-2 desktop:margin-bottom-5">
+                    <article class="usa-prose pep-prose">
+                        
+                            <h1>LEIE Database &amp; Supplement Downloads</h1>
+                        
+                        
+                            
+
+
+
+    
+    
+        <p class="usa-intro" data-block-key="lodwr">HHS-OIG offers a CSV download of active OIG exclusions that can be used on your local computer or to populate the database program of your choice.</p>
+    
+
+    
+    
+        
+
+<div class="pep-alert usa-alert usa-alert--success" >
+    <div class="usa-alert__body">
+        
+            <h3 class="usa-alert__heading">10-09-2026</h3>
+        
+        
+            <p data-block-key="e13ss">Last Update</p>
+        
+    </div>
+</div>
+
+    
+
+    
+    
+        <p data-block-key="3h9r9"></p><h2 data-block-key="7ffe4" id="working-with-the-leie-files"><b>Working with the LEIE files</b></h2><p data-block-key="7gqm2">It is important to understand the nature of the LEIE files and decide the best strategy for your organization. We suggest reviewing the <a href="/exclusions/leie-quick-tips-instructions/">Getting Started</a> section, and then doing the following:</p><ol><li data-block-key="2s7la">Download the <a href="#leie-database-download">LEIE Database</a> to setup your local system for searches.</li><li data-block-key="aft3e"><b>Pick one of the following strategies each month</b> to keep your local database up-to-date. Either,<br/><b>•</b> Download the <a href="#leie-database-download">latest full database file</a>, OR<br/><b>•</b> Append your information by applying the <a href="#latest-monthly-supplements">monthly supplement files</a>.</li></ol><p data-block-key="aem3t">Please read the <a href="/exclusions/leie-quick-tips-instructions/">LEIE Quick Tips &amp; Instructions</a> if you are new to the LEIE or you wish to improve the efficiency of your searches.</p>
+    
+
+    
+    
+        
+
+<div class="pep-alert usa-alert usa-alert--warning usa-alert--slim" >
+    <div class="usa-alert__body">
+        
+        
+            <p data-block-key="nzhlr">The Privacy Act prohibits the distribution of SSNs so regardless of your exact process, you'll need to use the <a href="https://exclusions.oig.hhs.gov/">Online Search</a> to verify specific individuals and entities.</p>
+        
+    </div>
+</div>
+
+    
+
+    
+    
+        <p data-block-key="m7fi6"></p><h2 data-block-key="s017" id="leie-database-download"><b>LEIE Database Download</b></h2><p data-block-key="6eob2">The LEIE Database CSV file contains<b> the entire dataset of all exclusions in effect</b>. Every month, this file is replaced with the most current version of the complete database.</p><ul><li data-block-key="cdc1l">Individuals and entities who have been reinstated<b> are removed</b> from this file.</li><li data-block-key="3fjno"><b>If you download the LEIE database each month,</b> do NOT use the Monthly Supplement Files.<ul><li data-block-key="1rl10"><a href="https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv">09-2026 Updated LEIE Database</a> (CSV)</li></ul></li></ul><p data-block-key="blak6"><a href="/documents/root/10419/Current%20LEIE%20Database%20Record%20Layout.pdf">Database Record Layout</a> (PDF) - Defines the different fields contained within the LEIE Downloadable Database and how many characters are in each field.</p>
+    
+
+    
+    
+        
+
+<div class="usa-accordion margin-top-6">
+    
+
+
+
+    
+    
+        
+
+<h2 id="why-does-the-last-update-date-not-match-the-date-on-leie-filenames" class="usa-accordion__heading" >
+    <button class="usa-accordion__button" aria-controls="acc-why-does-the-last-update-date-not-match-the-date-on-leie-filenames">
+        Why does the Last Update date not match the date on LEIE filenames?
+    </button>
+</h2>
+<div id="acc-why-does-the-last-update-date-not-match-the-date-on-leie-filenames" class="usa-accordion__content usa-prose">
+    
+
+
+
+    
+    
+        <p data-block-key="paly8">LEIE files include <b>all actions taken during the prior month</b>. For example, if the update date is December, the Database Download file contains all exclusions through the end of November. The Supplement files contains exclusions and reinstatement that occurred during the month of November.</p>
+    
+
+
+</div>
+
+    
+
+
+</div>
+    
+
+    
+    
+        <h2 data-block-key="3h9r9" id="latest-monthly-supplements"><b>Latest Monthly Supplements</b></h2><p data-block-key="cqcq3">When maintaining a local version of the database, you can use these files to <b>manually</b> <b>add new exclusions</b> and <b>remove reinstated entities</b> to update your database so it reflects the status as of the month indicated in the filename.</p><p data-block-key="5d53a"></p>
+    
+
+    
+    
+        
+
+<div class="pep-alert usa-alert usa-alert--info usa-alert--slim" >
+    <div class="usa-alert__body">
+        
+        
+            <p data-block-key="hi01y">For the most accurate and complete data, OIG recommends downloading the updated <a href="#leie-database-download">LEIE Database</a> rather than relying solely on these monthly incremental files. Supplement files contain actions for a single month only – they do NOT include the full database.</p>
+        
+    </div>
+</div>
+
+    
+
+    
+    
+        <h3 data-block-key="7x9bl" id="september-2026">September 2026</h3><ul><li data-block-key="72cfi"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2609excl.csv">09-2026 Exclusions</a> (CSV)</li><li data-block-key="de1g8"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2609rein.csv">09-2026 Reinstatements</a> (CSV)</li></ul><h2 data-block-key="jhhn" id="profile-corrections">Profile Corrections</h2><p data-block-key="9tn72">Changes made to the excluded individual or entity's profile, such as a change of address, etc. Do NOT use this file to verify exclusions.</p><p data-block-key="d2dtu"><a href="https://oig.hhs.gov/exclusions/files/leie_updated_information.pdf">09-2026 Profile Corrections</a> (PDF)</p><h2 data-block-key="9oopk" id="supplements-archive"><b>Supplements Archive</b></h2>
+    
+
+    
+    
+        <p data-block-key="7x9bl">OIG only archives monthly supplement files for the <b>previous 12 months</b>. Older information is not available on the website or via phone call to Exclusions staff although the <a href="#leie-database-download">Downloadable LEIE</a> gives users the latest information on excluded individuals or entities.</p>
+    
+
+    
+    
+        <h3 data-block-key="ifdgw" id="august-2026">August 2026</h3><ul><li data-block-key="durmq"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2608excl.csv">08-2026 Exclusions</a> (CSV)</li><li data-block-key="2qngc"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2608rein.csv">08-2026 Reinstatements</a> (CSV)</li></ul><h3 data-block-key="eqt2p" id="july-2026">July 2026</h3><ul><li data-block-key="4auls"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2607excl.csv">07-2026 Exclusions</a> (CSV)</li><li data-block-key="aljhg"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2607rein.csv">07-2026 Reinstatements</a> (CSV)</li></ul><h3 data-block-key="94l7s" id="june-2026">June 2026</h3><ul><li data-block-key="dpb26"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2606excl.csv">06-2026 Exclusions</a> (CSV)</li><li data-block-key="dgrd6"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2606rein.csv">06-2026 Reinstatements</a> (CSV)</li></ul><h3 data-block-key="4u9gn" id="may-2026">May 2026</h3><ul><li data-block-key="7tcs"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2605excl.csv">05-2026 Exclusions</a> (CSV)</li><li data-block-key="6vcv"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2605rein.csv">05-2026 Reinstatements</a> (CSV)</li></ul><h3 data-block-key="1hvmd" id="april-2026">April 2026</h3><ul><li data-block-key="b8duf"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2604excl.csv">04-2026 Exclusions</a> (CSV)</li><li data-block-key="4i1ee"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2604rein.csv">04-2026 Reinstatements</a> (CSV)</li></ul><h3 data-block-key="728t8" id="march-2026">March 2026</h3><ul><li data-block-key="ebqql"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2603excl.csv">03-2026 Exclusions</a> (CSV)</li><li data-block-key="7fmb4"><a href="https://oig.hhs.gov/exclusions/downloadables/2026/2603rein.csv">03-2026 Reinstatements</a> (CSV)</li></ul><h3 data-block-key="9jpro" id="february-2026">February 202<b>6</b></h3><ul><li data-block-key="6e17a">02-2026 Exclusions: (<a href="https://oig.hhs.gov/exclusions/downloadables/2026/2602excl.csv">CSV</a>)</li><li data-block-key="aphip">02-2026 Reinstatements: (<a href="https://oig.hhs.gov/exclusions/downloadables/2026/2602rein.csv">CSV</a>)</li></ul><h3 data-block-key="4jfgu" id="january-2026"><b>Janua</b>ry 202<b>6</b></h3><ul><li data-block-key="3tde0">01-2026 Exclusions: (<a href="https://oig.hhs.gov/exclusions/downloadables/2026/2601excl.csv">CSV</a>)</li><li data-block-key="f0she">01-2026 Reinstatements: (<a href="https://oig.hhs.gov/exclusions/downloadables/2026/2601rein.csv">CSV</a>)</li></ul><p data-block-key="bl0am"></p>
+    
+
+    
+    
+        
+
+<div class="usa-accordion margin-top-6">
+    
+
+
+
+    
+    
+        
+
+<h2 id="2025-monthly-supplement-archive" class="usa-accordion__heading" >
+    <button class="usa-accordion__button" aria-controls="acc-2025-monthly-supplement-archive">
+        2025 Monthly Supplement Archive
+    </button>
+</h2>
+<div id="acc-2025-monthly-supplement-archive" class="usa-accordion__content usa-prose">
+    
+
+
+
+    
+    
+        <p data-block-key="qu1wr"><b>December 2025</b></p><ul><li data-block-key="7clc0">12-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2512excl.csv">CSV</a>)</li><li data-block-key="b09ir">12-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2512rein.csv">CSV</a>)</li></ul><p data-block-key="5lcot"><b>November 2025</b></p><ul><li data-block-key="dsljg">11-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2511excl.csv">CSV</a>)</li><li data-block-key="7oibe">11-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2511rein.csv">CSV</a>)</li></ul><p data-block-key="1j82"><b>October 2025</b></p><ul><li data-block-key="d5635">10-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2510excl.csv">CSV</a>)</li><li data-block-key="5jo11">10-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2510rein.csv">CSV</a>)</li></ul><p data-block-key="336s3"><b>September 2025</b></p><ul><li data-block-key="91jov">09-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2509excl.csv">CSV</a>)</li><li data-block-key="f6d56">09-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2509rein.csv">CSV</a>)</li></ul><p data-block-key="53mgq"><b>August 2025</b></p><ul><li data-block-key="8kstu">08-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2508excl.csv">CSV</a>)</li><li data-block-key="3s9if">08-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2508rein.csv">CSV</a>)</li></ul><p data-block-key="8adso"><b>July 2025</b></p><ul><li data-block-key="drd0c">07-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2507excl.csv">CSV</a>)</li><li data-block-key="5emhq">07-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2507rein.csv">CSV</a>)</li></ul><p data-block-key="f8fus"><b>June 2025</b></p><ul><li data-block-key="aegjq">06-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2506excl.csv">CSV</a>)</li><li data-block-key="75l4k">06-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2506rein.csv">CSV</a>)</li></ul><p data-block-key="m04j"><b>May 2025</b></p><ul><li data-block-key="3bnb">05-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2505excl.csv">CSV</a>)</li><li data-block-key="9rs2i">05-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2505rein.csv">CSV</a>)</li></ul><p data-block-key="7hact"><b>April 2025</b></p><ul><li data-block-key="bchkn">04-2025 Exclusions (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2504excl.csv">CSV</a>)</li><li data-block-key="aoce2">04-2025 Reinstatements (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2504rein.csv">CSV</a>)</li></ul><p data-block-key="6imo0"><b>March 2025</b></p><ul><li data-block-key="8748k">03-2025 Exclusions: (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2503excl.csv">CSV</a>)</li><li data-block-key="ao874">03-2025 Reinstatements: (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2503rein.csv">CSV</a>)</li></ul><p data-block-key="39q9m"><b>February 2025</b></p><ul><li data-block-key="f7e6o">02-2025 Exclusions: (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2502excl.csv">CSV</a>)</li><li data-block-key="9vuss">02-2025 Reinstatements: (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2502rein.csv">CSV</a>)</li></ul><p data-block-key="4ibue"><b>January 2025</b></p><ul><li data-block-key="7vmid">01-2025 Exclusions: (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2501excl.csv">CSV</a>)</li><li data-block-key="1veo6">01-2025 Reinstatements: (<a href="https://oig.hhs.gov/exclusions/downloadables/2025/2501rein.csv">CSV</a>)</li></ul>
+    
+
+
+</div>
+
+    
+
+
+</div>
+    
+
+    
+    
+        <p data-block-key="xt9gq"></p><h2 data-block-key="4dt" id="fixing-problems-with-your-leie-entry"><b>Fixing problems with your LEIE entry</b></h2><p data-block-key="fihti">If you have an issue with a specific entry in the database, such as errors in the records, etc., please send your email to <a href="mailto:exclusions@oig.hhs.gov">exclusions@oig.hhs.gov</a>.</p>
+    
+
+
+                        
+                        
+                    </article>
+                </div>
+                
+                    <div class="sidebar print-display-none tablet:grid-col-4 desktop:margin-top-8">
+                        
+
+
+
+    
+    
+        
+
+<aside class='block-highlight padding-top-2px margin-bottom-4' aria-label='On this page...'>
+    <h2 class='padding-top-1 margin-top-0 border-top-05 border-primary font-family-heading font-heading-lg'>On this page...</h2>
+    <ul><li data-block-key="srvoa"><a href="#working-with-the-leie-files">Working with the LEIE files</a></li><li data-block-key="88gik"><a href="#leie-database-download">LEIE Database Download</a></li><li data-block-key="c45c2"><a href="#latest-monthly-supplements">Latest Monthly Supplements</a></li><li data-block-key="e97j5"><a href="#profile-corrections">Profile Corrections</a></li><li data-block-key="dut46"><a href="#supplements-archive">Supplements Archive</a></li><li data-block-key="at9"><a href="#fixing-problems-with-your-leie-entry">Fixing problems with your LEIE entry</a></li></ul>
+</aside>
+
+    
+
+    
+    
+        
+
+<aside class='block-highlight padding-top-2px margin-bottom-4' aria-label='Related Resources'>
+    <h2 class='padding-top-1 margin-top-0 border-top-05 border-primary font-family-heading font-heading-lg'>Related Resources</h2>
+    <ul><li data-block-key="0hz82"><a href="/exclusions/leie-quick-tips-instructions/">LEIE Quick Tips &amp; Instructions</a></li><li data-block-key="3gahh"><a href="https://cloud.connect.hhs.gov/OIG">Sign up for LEIE update notifications</a></li><li data-block-key="6qs4"><a href="https://oig.hhs.gov/exclusions/files/leie_record_layout.pdf">Database Record Layout</a> - Defines the different fields contained within the LEIE Downloadable Database and how many characters are in each field.</li><li data-block-key="4gltr"><a href="/exclusions/leie-quick-tips-instructions/">CSV Download File Questions</a></li><li data-block-key="b8lrj"><a href="#fixing-problems-with-your-leie-entry">Fixing problems with your LEIE entry</a></li></ul>
+</aside>
+
+    
+
+
+                    </div>
+                
+            </div>
+        </div>
+    
+
+            </main>
+        
+        
+        
+            
+            
+
+<footer class="usa-footer usa-footer--big">
+    <div class="grid-container usa-footer__return-to-top">
+        <a href="#">Return to top</a>
+    </div>
+    
+        
+            <div class="usa-footer__primary-section">
+                <div class="grid-container">
+                    <div class="grid-row grid-gap">
+                        <div class="tablet:grid-col-8">
+                            <nav class="usa-footer__nav" aria-label="Footer navigation">
+                                <div class="grid-row grid-gap-4">
+                                    
+                                        <div class="grid-col">
+                                            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                                                <h2 class="usa-footer__primary-link">Related Information</h2>
+                                                <ul class="usa-list usa-list--unstyled">
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="/about-oig/contact-us/">Contact Us</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="/oig-policies/">OIG Policies</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://oig.hhs.gov/faqs/">FAQs</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://www.npdb.hrsa.gov/">NPDB</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://www.hhs.gov/">HHS.gov</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://www.ignet.gov/">IGnet</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://www.usa.gov/">USA.gov</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://oig.hhs.gov/foia/">FOIA</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="https://get.adobe.com/reader/">Download Reader</a></li>
+                                                    
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    
+                                        <div class="grid-col">
+                                            <section class="usa-footer__primary-content usa-footer__primary-content--collapsible">
+                                                <h2 class="usa-footer__primary-link">Publications</h2>
+                                                <ul class="usa-list usa-list--unstyled">
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="/about-oig/strategic-plan/">Strategic Plan</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="/about-oig/oig-budget/">OIG Budget</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="/reports/work-plan/">Work Plan</a></li>
+                                                    
+                                                        <li class="usa-footer__secondary-link"><a href="/reports/all/?report-type=Top+Unimp.+Recs&amp;hhs-agency=#results">All Reports and Publications</a></li>
+                                                    
+                                                </ul>
+                                            </section>
+                                        </div>
+                                    
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="tablet:grid-col-4">
+                            <div class="usa-sign-up">
+                                
+                                
+                                    <a class="usa-button" href="https://cloud.connect.hhs.gov/OIG">
+                                        Subscribe to Our Newsletter
+                                    </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <div class="usa-footer__secondary-section">
+            <div class="grid-container">
+                <div class="grid-row grid-gap">
+                    <div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+                        <div class="mobile-lg:grid-col-auto">
+                            <img class="usa-footer__logo-img" src="/static/img/oig-seal.a9d3256afc2f.png" alt="Seal of HHS Office of Inspector General">
+                        </div>
+                        <div class="mobile-lg:grid-col-auto">
+                            <p class="usa-footer__logo-heading">HHS Office of Inspector General</p>
+                        </div>
+                    </div>
+                    <div class="usa-footer__contact-links mobile-lg:grid-col-6">
+                        <div class="usa-footer__social-links grid-row grid-gap-1">
+                            
+                                <div class="grid-col-auto">
+                                    <a class="usa-social-link" href=https://www.instagram.com/oigathhs/>
+                                        <img class="usa-social-link__icon" src="/static/img/usa-icons/instagram.0412a2be0d3e.svg" alt="instagram">
+                                    </a>
+                                </div>
+                            
+                            
+                                <div class="grid-col-auto">
+                                    <a class="usa-social-link" href=https://www.facebook.com/OIGatHHS/>
+                                        <img class="usa-social-link__icon" src="/static/img/usa-icons/facebook.b333d182c38a.svg" alt="Facebook">
+                                    </a>
+                                </div>
+                            
+                            
+                                <div class="grid-col-auto">
+                                    <a class="usa-social-link" href=https://twitter.com/OIGatHHS>
+                                        <img class="usa-social-link__icon" src="/static/img/usa-icons/x.2df007dc3144.svg" alt="X">
+                                    </a>
+                                </div>
+                            
+                            
+                                <div class="grid-col-auto">
+                                    <a class="usa-social-link" href=https://www.youtube.com/user/OIGatHHS>
+                                        <img class="usa-social-link__icon" src="/static/img/usa-icons/youtube.ae24cdbe6b2a.svg" alt="YouTube">
+                                    </a>
+                                </div>
+                            
+                            
+                                <div class="grid-col-auto">
+                                    <a class="usa-social-link" href=https://www.linkedin.com/company/hhs-office-of-the-inspector-general>
+                                        <img class="usa-social-link__icon" src="/static/img/usa-icons/linkedin.16d0934404dd.svg" alt="LinkedIn">
+                                    </a>
+                                </div>
+                            
+                        </div>
+                        <div>
+                            <p><a class="usa-footer__secondary-link"  href= "https://oig.hhs.gov/about-oig/contact-us/social-media-directory/" >HHS-OIG Social Media Directory</a></p>
+                       </div>
+                        <span class="usa-footer__contact-heading usa-sr-only">Contact</span>
+
+                        <address class="usa-footer__address">
+                            <div class="usa-footer__contact-info grid-row grid-gap">
+                                <div class="grid-col-auto">
+                                    330 Independence Avenue, SW<br>
+                                    Washington, DC 20201
+                                </div>
+                            </div>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</footer>
+
+            
+        
+
+
+
+        
+        <script src="/static/wagtailadmin/js/vendor/jquery-3.6.0.min.b99e3172f9b5.js"></script>
+        <script type="text/javascript" src="/static/js/uswds.min.bd09b4b295ce.js"></script>
+        <script type="text/javascript" src="/static/js/oig_hhs_gov_pep.d41d8cd98f00.js"></script>
+        
+            
+            
+            
+            
+                
+            
+            
+            
+        
+        
+
+
+        
+        
+                
+                
+                <script src="https://touchpoints.app.cloud.gov/touchpoints/a2a33ea8.js" async></script>
+                
+                
+
+
+        
+            
+        
+
+        
+            <!-- Site Improve-->
+            <script async src="https://siteimproveanalytics.com/js/siteanalyze_6283531.js"></script>
+        
+    </body>
+</html>
+

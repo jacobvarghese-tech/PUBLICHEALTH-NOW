@@ -3,66 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Pattern Check</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>About Medicare Fraud Flagger</title>
+  <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
   <header class="top">
     <div>
-      <p class="eyebrow"><a href="index.html">Pattern Check</a></p>
-      <h1>What this score is</h1>
-      <p class="purpose">A high score means the public billing row looks unusual next to other billers of the same service in the same year. It does not mean the biller committed fraud.</p>
+      <p class="eyebrow"><a href="/">Medicare Fraud Flagger</a></p>
+      <h1>About this score</h1>
+      <p class="purpose">A high score is a resemblance, not a fraud finding.</p>
     </div>
   </header>
-
   <main class="prose">
-    <h2>Why there is no fraud classifier</h2>
-    <p>The first plan was a supervised model whose positive class would be “this biller was later sanctioned for a scheme built on medically unnecessary services.” That plan needed at least 50 unique positive NPIs, spread across more than one scheme, each of whom billed a watched code in a year before the sanction date. The joined count did not clear that gate.</p>
-    <p id="gate-count">Label counts load with the data file.</p>
-    <p>The current HHS OIG exclusion list, downloaded October 15, 2026, has 84,093 records. Fraud-type records (1128(a)(1), 1128(a)(3), 1128(b)(6), 1128(b)(7)) number 32,790, and 4,296 of those have a usable NPI. License revocations are a larger category and are not treated as fraud labels. A match also does not mean the person was excluded for the service in the row. The reason code does not name an HCPCS code.</p>
-    <p>On the genetic-test slice, five fraud-type matches appeared, all kickback exclusions (1128(b)(7)), none the medically unnecessary code 1128(b)(6). A wider 2022–2024 scan of COVID testing, remote monitoring, nerve conduction, urine drug testing, allergy testing, skin-graft application, respiratory PCR, and a few genetic codes joined to 29 unique fraud-type NPIs once every watched code for 2022–2024 was included. Adding the catheter and skin-substitute joins does not get the count to 50. That number is a join result, not a conviction count.</p>
-    <p>Three later searches were run on October 15, 2026:</p>
+    <h2>What the number means</h2>
+    <p>A high score is a resemblance, not a fraud finding. The model compares a billing row with providers who were later excluded. It does not decide that the provider committed fraud.</p>
+    <h2>Training</h2>
+    <p>The second forest was fit on 2013 through 2022. 2023 was the selection year. 2024 was held out. The earlier training window has 1270 fraud provider-year rows. An earlier shallow model placed 11/48 of the 2024 fraud rows in the top 1% and 18/48 in the top 5%. The saved blend places 26/48 in the top 1% and 26/48 in the top 5%. <!--FOREST-SHARES--> Those 48 fraud rows are below the published external-validation floor of at least 100 events, ideally 200 or more, so those two shares are not a precise estimate of next-year capture.</p>
+    <h2>For the demo</h2>
+    <p>App name: Medicare Fraud Flagger. Purpose: look up a provider's billing row and see whether that row resembles providers who were later excluded. Audience: a congressional office, a student, or a reporter who wants the resemblance without treating it as a finding. Tools and languages: Python, HTML, CSS, and JavaScript. The score comes from a saved blend of two forests. The map uses Leaflet.</p>
+    <p>Show the app working in this order. Search Prince Laboratories, NPI 1124725817, for 2024. Open Reliable Results Labs, NPI 1639879034, for the same year. Click a map pin and show that it opens the same row. Type a billing row with a blank feature and show the incomplete mark. Read the resemblance line on the result.</p>
+    <h2>Written answers</h2>
+    <p>Title: Medicare Fraud Flagger.</p>
+    <p>Purpose: a person can look up a Medicare provider by name, city, or NPI, or type a new billing row, and see a percentile. A high score means the billing profile resembles providers later excluded for a fraud-type reason. The page says that on every result.</p>
+    <p>Inspiration: published work by Bauder and Khoshgoftaar scored Medicare billing rows against later exclusions. I wanted that kind of lookup on one screen, with the two lab names a judge can open in a minute, and with the score kept separate from a finding.</p>
+    <p>Technical difficulty: the rolled provider-year table is too large for a static JSON file, and a typed row still has to score against the saved blend. I kept the search table and the model on a local Python server. The page asks that server for a stored percentile or a live score. A blank feature stays blank and the row is marked incomplete.</p>
+    <p>What I learned: a 2024 top 1 percent count of 26 of 48 looks strong until you put it next to the published floor of at least 100 events. The share is a resemblance on a small holdout, so the page prints the count and the caveat together. My biggest takeaway is that the disclaimer has to sit on the result, not only on this page.</p>
+    <p>A 2.0 would add billing years before 2018, a public URL for the contest window, and a second model only after the first page already runs. It would also put the student's own name in the demo once that name is known. This draft leaves the name blank on purpose.</p>
+    <h2>Sources and tools</h2>
     <ul>
-      <li>DMEPOS referring-provider catheter codes A4351, A4352, and A4353, years 2021–2024, covered 22,550 referring NPIs and joined to 3 fraud-type exclusions. The supplier file for the same codes covered 2,225 NPIs and joined to none. Fifty-five skin-substitute Q codes in the physician file, 2022–2024, joined to 2. Together that search added 5 unique fraud-type NPIs, and all 5 billed in a year before the exclusion year. Four are 1128(a)(1) and one is 1128(b)(7).</li>
-      <li>Wayback Machine copies of the exclusion file from 2022, 2023, 2024, and January 2026 recovered 282 fraud-type NPIs that the current file no longer lists. Ten of those are kickback exclusions. None are 1128(b)(6). Those NPIs were not joined back to billing rows, so they do not add confirmed positives.</li>
-      <li>Department of Justice takedown summaries name owners, marketers, and ordering clinicians more often than the rendering NPI on the billing row. Named labs that resolve in the NPPES registry are listed below. Convictions and settlements are kept apart from charges. An indictment is a charge.</li>
+      <li>Grok, in the Grok Build CLI, was used to build the pipeline, the model step, and this page. The student describes their own part in the portal, in their own words.</li>
+      <li>CMS files: Medicare Physician &amp; Other Practitioners by Provider and Service, 2018, 2019, 2020, 2021, 2022, 2023, and 2024, from data.cms.gov. Each year is rolled to one row per rendering NPI.</li>
+      <li>LEIE: the HHS OIG List of Excluded Individuals/Entities, the September 2026 UPDATED.csv. A provider-year is fraud only for exclusion types 1128a1, 1128a3, 1128b6, and 1128b7 when the exclusion year is after the billing year.</li>
+      <li>Saved blend: models/candidates/blend_357_247.joblib. The score is the higher of two saved ranks. Each rank is a page forest plus a second RandomForestClassifier fit on 2013 through 2022. The local Python server loads that file and scores a typed row. A static file server cannot score a row.</li>
+      <li>Map library: Leaflet. A pin uses the row's city, state, and ZIP. Clicking the pin opens that same row.</li>
+      <li>Page layout adapted from ProPublica Prescriber Checkup, designed by the ProPublica news apps team including Lena Groeger, Jennifer LaFleur, Charles Ornstein, and Tracy Weber. Their stylesheet and branding are not used. The layout source is the June 2019 public app at projects.propublica.org/checkup.</li>
     </ul>
-    <p>Part D opioid files were left out. They are a different kind of case and would only inflate the count.</p>
-
-    <h2>How the score is built</h2>
-    <p>For one HCPCS code and one year, each rendering NPI gets four numbers, all compared with other billers of that same code:</p>
-    <ol>
-      <li>National share: this biller’s services divided by all services for the code that year.</li>
-      <li>ZIP share: services from this biller’s ZIP code divided by national services for the code.</li>
-      <li>Growth: this year’s services divided by the same NPI and code last year, minus one. A new biller is left blank and does not add to the score.</li>
-      <li>Charge ratio: average submitted charge divided by the median charge for the code and year.</li>
-    </ol>
-    <p>Each number is turned into a 0–1 rank among that year’s billers. The score is 40% national share, 25% ZIP share, 20% growth, and 15% charge ratio. Missing growth is left out of that biller’s average so a new lab is not punished or rewarded for a blank. The weights are a ranking choice, not a trained model.</p>
-
-    <h2>Named labs from public cases</h2>
-    <p>These names were resolved in the CMS NPPES registry on October 15, 2026. A resolved NPI is an identity match. It is not a conviction, and it is not proof the NPI billed the watched code.</p>
-    <ul>
-      <li>Prince Laboratories Limited Liability Company, NPI 1124725817, Deerfield Beach, Florida. Billed 81419 in 2023 and 2024. Not on the October 15, 2026 exclusion list. Shown so the demo can recover the video example.</li>
-      <li>Reliable Results Labs Inc, NPI 1639879034, Deerfield Beach, Florida. Same pattern, same caveat.</li>
-      <li>ASAP Lab LLC, NPI 1588066278, Davie, Florida. Named in a 2026 takedown summary as a lab in a genetic-testing kickback scheme that also had a guilty plea by a former sales representative. Charge and plea are different outcomes. Confirm the plea against the person, not against every NPI that shares the lab name.</li>
-      <li>Andor Labs LLC, NPI 1184861353, Morrisville, North Carolina, and Minerva Genetics LLC, NPI 1023460334, El Paso, Texas. Named in a 2026 charged case about laboratory claims. Charged, not a label.</li>
-      <li>Apex Mobile Medical LLC, NPI 1821726589, Phoenix, Arizona. Named in a 2025 charged wound-allograft case. Charged, not a label.</li>
-    </ul>
-
-    <h2>Libraries, tools, and AI</h2>
-    <ul>
-      <li>HTML, CSS, and JavaScript. No framework. The page runs by opening <code>index.html</code> or by serving the <code>app</code> folder.</li>
-      <li>Public data: CMS Medicare Physician &amp; Other Practitioners by Provider and Service, data.cms.gov. Years used: 2022, 2023, 2024.</li>
-      <li>HHS OIG List of Excluded Individuals/Entities, <code>UPDATED.csv</code>, downloaded October 15, 2026, plus Wayback Machine snapshots of that file.</li>
-      <li>CMS NPPES NPI Registry API, used to resolve legal names to NPIs.</li>
-      <li>Python scripts in the working notes prepared the JSON. They are not part of the running page.</li>
-      <li>AI use: Grok, in the Grok Build CLI, was used to query the public files, count label joins, and draft this page and the ranking code. The ranking formula, the decision not to train a classifier, and the wording that a score is not a fraud finding were checked against the joined counts. The student should describe their own part of the build in the portal, in their own words.</li>
-    </ul>
-
-    <h2>What a 2.0 could add</h2>
-    <p>A classifier only if a later label source clears 50 unique positives across more than one scheme, with a year split and a top-1% and top-5% capture rate. Until then, the honest tool is this ranking.</p>
-    <p><a href="index.html">Back to the ranking</a></p>
+    <p>Missing fields stay missing. The row is marked incomplete. Name, NPI, city, state, and ZIP identify the row and place the pin. They are not features.</p>
+    <p><a href="/">Back to the flagger</a></p>
   </main>
-  <script src="about.js"></script>
 </body>
 </html>
