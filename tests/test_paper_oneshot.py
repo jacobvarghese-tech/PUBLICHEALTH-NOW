@@ -542,6 +542,10 @@ class DateRuleTest(unittest.TestCase):
         self.assertIsNone(table2_years("1128b6"))
         self.assertIsNone(table2_years("1128b7"))
 
+    @unittest.skipUnless(
+        LABEL_PATH.is_file() and LABEL_PATH.stat().st_size == LEIE_BYTES,
+        "needs data/paper_rolled/leie_20170627.csv at 12069440 bytes",
+    )
     def test_indefinite_rows_stay_out_of_the_fraud_class(self) -> None:
         """Drive load_labels on the shipped June 27, 2017 capture.
 
@@ -573,6 +577,10 @@ class DateRuleTest(unittest.TestCase):
         self.assertNotIn("2222222222", extra_ends)
         self.assertEqual(table2_years(normalize_type("1128(c)(3)(G)(i)")), 10)
 
+    @unittest.skipUnless(
+        LABEL_PATH.is_file() and LABEL_PATH.stat().st_size == LEIE_BYTES,
+        "needs data/paper_rolled/leie_20170627.csv at 12069440 bytes",
+    )
     def test_matching_capture_is_kept(self) -> None:
         """A file the size the June 27, 2017 URL returns is kept, not a mismatch."""
         self.assertTrue(LABEL_PATH.is_file())
@@ -588,6 +596,10 @@ class DateRuleTest(unittest.TestCase):
         self.assertEqual(LABEL_PATH.stat().st_size, LEIE_BYTES)
         self.assertFalse((rolled / "leie.size.txt").exists())
 
+    @unittest.skipUnless(
+        LABEL_PATH.is_file() and LABEL_PATH.stat().st_size == LEIE_BYTES,
+        "needs data/paper_rolled/leie_20170627.csv at 12069440 bytes",
+    )
     def test_wrong_leie_size_records_both_and_stops(self) -> None:
         """A download whose size is not 12069440 records both sizes and stops."""
         with tempfile.TemporaryDirectory() as tmp:

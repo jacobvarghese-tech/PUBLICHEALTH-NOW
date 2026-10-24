@@ -103,6 +103,10 @@ class HarnessScoreTest(unittest.TestCase):
         self.assertIn("not a finding", text)
         self.assertEqual(BillingResemblance.instructions, INSTRUCTIONS)
 
+    @unittest.skipUnless(
+        __import__("pathlib").Path("data/rolled/2019.csv").is_file(),
+        "needs the older data/rolled/2019.csv layout, which DATA.md says not to restore",
+    )
     def test_build_splits_uses_the_full_labeled_pool(self) -> None:
         trainset, valset, counts = build_splits()
         self.assertEqual(counts["train_fraud"] + counts["val_fraud"], counts["pool_fraud"])

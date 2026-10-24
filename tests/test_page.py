@@ -86,6 +86,17 @@ class PageLogicTest(unittest.TestCase):
         self.assertIn("not available", format_percentile(empty))
 
 
+def _page_files_present() -> bool:
+    """The live page needs the saved blend and the rolled years. A clone does not."""
+    from app.server import missing_files
+
+    return not missing_files()
+
+
+@unittest.skipUnless(
+    _page_files_present(),
+    "needs models/candidates/blend_357_247.joblib and data/paper_rolled/2018-2024.csv",
+)
 class CitySearchHttpTest(unittest.TestCase):
     """A city query must fill the form from a stored row past the first 20 names."""
 
@@ -157,6 +168,10 @@ class CitySearchHttpTest(unittest.TestCase):
         self.assertTrue(all("deerfield" in row["City"].lower() for row in rows))
 
 
+@unittest.skipUnless(
+    _page_files_present(),
+    "needs models/candidates/blend_357_247.joblib and data/paper_rolled/2018-2024.csv",
+)
 class Step7ServerTest(unittest.TestCase):
     """Drive the shipped Handler after boot. Do not reimplement the routes."""
 

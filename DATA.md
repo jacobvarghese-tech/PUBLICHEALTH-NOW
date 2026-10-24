@@ -20,13 +20,44 @@ The page reads one row per provider per year from `data/paper_rolled/`. Years on
 | `data/nppes/npi_sex.csv` | NPI to M/F, used when a CMS year has no gender column. |
 | `models/candidates/blend_357_247.joblib` | The saved ranker. Both forests are inside this file. |
 
-`scripts/paper_roll_year.py` builds `data/paper_rolled/YEAR.csv` from a CMS year. `scripts/download_year.py` has the 2018–2024 CSV URLs that were opened from data.cms.gov.
+`scripts/paper_roll_year.py --year YEAR` downloads one CMS year and writes `data/paper_rolled/YEAR.csv`. Use that command. `scripts/download_year.py` writes an older layout in `data/rolled/`, and the page does not read that folder.
+
+## Commands
+
+From the repo root, with Python 3.14:
+
+```
+py -3.14 -m pip install -r requirements.txt
+py -3.14 -m unittest discover -s tests
+```
+
+The second command runs on a fresh clone. Tests that need the model or a year file skip themselves and say which file they need.
+
+To build the page files, one year at a time:
+
+```
+py -3.14 scripts/paper_roll_year.py --year 2024
+```
+
+Replace `2024` with each year from 2013 through 2024. That script downloads the CMS year, writes `data/paper_rolled/YEAR.csv`, and deletes the raw CSV after the roll exists. `--keep-raw` leaves the raw file in `data/raw/`. A year is about 3 GB before the roll and about 400 MB after it. 2013, 2014, and 2015 have direct CSV URLs in that script. 2016 through 2024 open the CMS resources page for that year and take the CSV URL from the open page.
+
+The current LEIE file is already in this repo at `data/training/UPDATED.csv`. A newer monthly file is the direct download https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv. The page that lists it is https://oig.hhs.gov/exclusions/exclusions_list.asp. Save a replacement as `data/training/UPDATED.csv`.
+
+NPPES:
+
+```
+py -3.14 scripts/nppes_gender.py
+```
+
+That reads `data/nppes/NPPES_Data_Dissemination_October_2026_V2.zip` and writes `data/nppes/npi_sex.csv`. The zip URL is https://download.cms.gov/nppes/NPPES_Data_Dissemination_October_2026_V2.zip. The listing page is https://download.cms.gov/nppes/NPI_Files.html.
+
+The saved ranker is not a public download. Copy `models/candidates/blend_357_247.joblib` from the person who trained it. The page cannot score a row without that file.
 
 ## Where the public files come from
 
-1. Medicare Physician & Other Practitioners by Provider and Service, one file per year, from https://data.cms.gov/. A row is one rendering NPI, one HCPCS code, and one place of service. Put a downloaded year in `data/raw/`, then roll it.
-2. LEIE, the monthly `UPDATED.csv`, from https://oig.hhs.gov/exclusions/exclusions_list.asp. Save it as `data/training/UPDATED.csv`. A provider-year is a fraud label only when `EXCLTYPE` is `1128a1`, `1128a3`, `1128b6`, or `1128b7` and the exclusion year is after the billing year.
-3. NPPES dissemination file, from https://download.cms.gov/nppes/NPI_Files.html. The zip is about 1 GB. The pipeline keeps only NPI and sex in `data/nppes/npi_sex.csv`. `scripts/nppes_gender.py` does that extraction.
+1. Medicare Physician & Other Practitioners by Provider and Service, one file per year, from https://data.cms.gov/. A row is one rendering NPI, one HCPCS code, and one place of service. `scripts/paper_roll_year.py` downloads the year into `data/raw/` and writes the rolled file.
+2. LEIE, the monthly `UPDATED.csv`, from https://oig.hhs.gov/exclusions/downloadables/UPDATED.csv. Save it as `data/training/UPDATED.csv`. A provider-year is a fraud label only when `EXCLTYPE` is `1128a1`, `1128a3`, `1128b6`, or `1128b7` and the exclusion year is after the billing year.
+3. NPPES dissemination file, from https://download.cms.gov/nppes/NPPES_Data_Dissemination_October_2026_V2.zip. The zip is about 1 GB. `scripts/nppes_gender.py` keeps only NPI and sex in `data/nppes/npi_sex.csv`.
 
 ## Shape of a rolled row
 
