@@ -6,8 +6,7 @@
       "spec": "blend_357_247.joblib",
       "kept": true,
       "confirm_top1": 26,
-      "confirm_top5": 26,
-      "note": "max of ranked scores from 357 and 247; no new fit"
+      "confirm_top5": 26
     }
   ]
 }
