@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicare Fraud Flagger</title>
+  <link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div id="content">
+    <div class="wrapper">
+      <header class="top_bar">
+        <h1 class="main-header"><a href="/">Medicare Fraud Flagger</a></h1>
+        <p class="mast-links"><a href="/about.html">About this score</a></p>
+      </header>
+
+      <div id="drugs-search">
+        <h2>Search for a provider, city, or NPI</h2>
+        <form id="lookup-form">
+          <div class="search_left">
+            <label for="query">Name, city, or NPI</label>
+            <input id="query" name="query" type="search" placeholder="Prince Laboratories" autocomplete="off">
+          </div>
+          <div class="search_right">
+            <label for="year">Year</label>
+            <select id="year" name="year">
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+              <option selected>2024</option>
+            </select>
+            <button type="submit" id="search-button">Search</button>
+          </div>
+          <div class="search-examples">
+            <p>For example:
+              <a href="#1124725817" data-open="1124725817" data-year="2024">Prince Laboratories</a>,
+              <a href="#1639879034" data-open="1639879034" data-year="2024">Reliable Results Labs</a>,
+              <a href="#deerfield" data-query="Deerfield Beach" data-year="2024">Deerfield Beach</a>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <section class="demos" id="demos" aria-label="2024 percentiles for the two named labs">
+        <p class="type_hedder">At a glance: 2024</p>
+        <div id="demo-cards">@@DEMOS@@</div>
+      </section>
+
+      <div class="page-columns">
+        <section class="provider_box" id="browser-pane" aria-label="Search results">
+          <div class="crumbs" id="crumbs">Medicare Fraud Flagger</div>
+          <h3 id="result-count"></h3>
+          <div class="table-wrap">
+            <table id="providers">
+              <thead>
+                <tr>
+                  <th>Provider</th>
+                  <th>Percentile</th>
+                </tr>
+              </thead>
+              <tbody id="results"></tbody>
+            </table>
+          </div>
+          <p id="result-note" class="hint">Search by name, city, or NPI. Click a result to open that row.</p>
+          <div id="map" aria-label="Map pin for the selected row"></div>
+          <p id="pin-note" class="hint">A pin uses the row's city, state, and ZIP. Click the pin to open that row.</p>
+        </section>
+
+        <aside class="right_bar">
+          <div class="not_here">
+            <p><strong>What's not here:</strong> This score means the billing row resembles providers later excluded for a fraud-type reason. The exclusion list is separate from this search.</p>
+          </div>
+        </aside>
+      </div>
+
+      <section class="profile" id="profile" hidden>
+        <div class="vitals">
+          <div class="crumbs" id="profile-crumbs"></div>
+          <h2 id="profile-name"></h2>
+          <div class="address">
+            <p id="profile-place"></p>
+            <h6 id="profile-meta"></h6>
+          </div>
+        </div>
+
+        <div class="top_summary">
+          <p class="type_hedder" id="glance-heading">At a glance</p>
+          <div class="summary_stats">
+            <div class="stat">
+              <span class="big_num" id="stat-percentile"></span>
+              <p id="stat-percentile-caption">Percentile among stored rows that year</p>
+            </div>
+            <div class="stat">
+              <span class="big_num" id="stat-specialty"></span>
+              <p>Specialty</p>
+            </div>
+            <div class="stat">
+              <span class="big_num" id="stat-services"></span>
+              <p>Mean services per code</p>
+            </div>
+            <div class="stat">
+              <span class="big_num" id="stat-charge"></span>
+              <p>Mean submitted charge</p>
+            </div>
+          </div>
+          <p class="avg" id="stat-rankline"></p>
+          <p class="resemblance" id="profile-resemblance"></p>
+          <p class="status-line" id="profile-status">Exclusion status is not on this row. The search file does not join the OIG list.</p>
+        </div>
+
+        <p class="type_hedder">The numbers behind the score</p>
+        <table id="feature-table">
+          <thead>
+            <tr>
+              <th>Measure</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id="feature-body"></tbody>
+        </table>
+      </section>
+
+      <section class="score-new" id="form-pane">
+        <p class="type_hedder">Score a row that is not in the file</p>
+        <p class="hint">Type specialty, gender, and the paper numeric summaries. A blank stays blank. Opening a stored row fills these fields and keeps the stored score. An attachment fills the same labels for the NPI you enter.</p>
+        <form id="model-upload">
+          <p class="type_hedder">Upload an attachment</p>
+          <label for="attachment-npi">Provider NPI
+            <input id="attachment-npi" name="npi" inputmode="numeric" autocomplete="off" placeholder="1124725817">
+          </label>
+          <label for="attachment-year">Year
+            <select id="attachment-year" name="year">
+              <option value="">Any year in the file</option>
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+              <option selected>2024</option>
+            </select>
+          </label>
+          <label for="attachment-file">Attachment
+            <input id="attachment-file" name="attachment" type="file" accept=".csv,.txt,.md,.json,text/csv,text/plain">
+          </label>
+          <button type="submit" id="attachment-button">Fill from attachment</button>
+          <p id="attachment-status" role="status" aria-live="polite"></p>
+        </form>
+        <form id="score-form">
+          <label>Specialty
+            <input name="Specialty" autocomplete="off">
+          </label>
+          <label>Gender
+            <input name="Gender" autocomplete="off">
+          </label>
+          <label>line_srvc_cnt mean
+            <input name="line_srvc_cnt_mean" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>line_srvc_cnt sum
+            <input name="line_srvc_cnt_sum" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>line_srvc_cnt median
+            <input name="line_srvc_cnt_median" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>line_srvc_cnt std
+            <input name="line_srvc_cnt_std" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>line_srvc_cnt min
+            <input name="line_srvc_cnt_min" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>line_srvc_cnt max
+            <input name="line_srvc_cnt_max" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_unique_cnt mean
+            <input name="bene_unique_cnt_mean" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_unique_cnt sum
+            <input name="bene_unique_cnt_sum" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_unique_cnt median
+            <input name="bene_unique_cnt_median" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_unique_cnt std
+            <input name="bene_unique_cnt_std" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_unique_cnt min
+            <input name="bene_unique_cnt_min" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_unique_cnt max
+            <input name="bene_unique_cnt_max" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_day_srvc_cnt mean
+            <input name="bene_day_srvc_cnt_mean" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_day_srvc_cnt sum
+            <input name="bene_day_srvc_cnt_sum" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_day_srvc_cnt median
+            <input name="bene_day_srvc_cnt_median" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_day_srvc_cnt std
+            <input name="bene_day_srvc_cnt_std" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_day_srvc_cnt min
+            <input name="bene_day_srvc_cnt_min" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>bene_day_srvc_cnt max
+            <input name="bene_day_srvc_cnt_max" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_submitted_chrg_amt mean
+            <input name="average_submitted_chrg_amt_mean" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_submitted_chrg_amt sum
+            <input name="average_submitted_chrg_amt_sum" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_submitted_chrg_amt median
+            <input name="average_submitted_chrg_amt_median" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_submitted_chrg_amt std
+            <input name="average_submitted_chrg_amt_std" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_submitted_chrg_amt min
+            <input name="average_submitted_chrg_amt_min" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_submitted_chrg_amt max
+            <input name="average_submitted_chrg_amt_max" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_medicare_payment_amt mean
+            <input name="average_medicare_payment_amt_mean" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_medicare_payment_amt sum
+            <input name="average_medicare_payment_amt_sum" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_medicare_payment_amt median
+            <input name="average_medicare_payment_amt_median" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_medicare_payment_amt std
+            <input name="average_medicare_payment_amt_std" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_medicare_payment_amt min
+            <input name="average_medicare_payment_amt_min" inputmode="decimal" autocomplete="off">
+          </label>
+          <label>average_medicare_payment_amt max
+            <input name="average_medicare_payment_amt_max" inputmode="decimal" autocomplete="off">
+          </label>
+          <button type="submit">Score this row</button>
+        </form>
+        <div id="score-result" class="result"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/static/vendor/leaflet/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

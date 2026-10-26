@@ -1,0 +1,87 @@
+<section id="provider-search" aria-label="Search stored rows">
+  <form id="lookup-form" class="usa-form search-bar" aria-busy="false">
+    <div class="search_left usa-form-group">
+      <label class="usa-label" for="query">Name, city, NPI</label>
+      <input class="usa-input" id="query" name="query" type="search" value="" placeholder="Prince Laboratories" autocomplete="off">
+    </div>
+    <div class="search_year usa-form-group">
+      <label class="usa-label" for="year">Year</label>
+      <select class="usa-select" id="year" name="year">
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option selected>2024</option>
+      </select>
+    </div>
+    <button type="submit" class="usa-button" id="search-button" aria-busy="false">Search</button>
+  </form>
+  <details class="extract-panel" id="search-extract">
+    <summary>Notes</summary>
+    <label class="usa-label" for="search-notes">Notes</label>
+    <textarea class="usa-textarea" id="search-notes" name="notes" rows="4" placeholder="Name, city, year"></textarea>
+    <button type="button" class="usa-button" id="search-extract-button" aria-busy="false">Fill</button>
+    <p id="search-extract-status" class="extract-status" role="status" aria-live="polite"></p>
+  </details>
+  <div id="lookup-status" class="usa-sr-only" role="status" aria-live="polite"></div>
+</section>
+
+<div class="work-grid">
+  <section class="provider_box is-empty" id="browser-pane" aria-label="Search results">
+    <h2 id="result-count" class="result-count"></h2>
+    <div class="table-wrap">
+      <table id="providers">
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Percentile</th>
+          </tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+    <p id="result-note" class="usa-sr-only" role="status"></p>
+    <div id="map" aria-label="Map pin for the selected row"></div>
+    <p id="pin-note" class="usa-sr-only"></p>
+  </section>
+
+  <section class="profile" id="profile" hidden aria-label="Selected provider">
+    <h2 id="profile-name"></h2>
+    <p id="profile-place" class="address"></p>
+    <p id="profile-meta" class="address"></p>
+    <div class="summary_stats">
+      <div class="stat">
+        <span class="big_num" id="stat-percentile"></span>
+        <p id="stat-percentile-caption">Percentile</p>
+      </div>
+      <div class="stat">
+        <span class="big_num" id="stat-specialty"></span>
+        <p>Specialty</p>
+      </div>
+      <div class="stat">
+        <span class="big_num" id="stat-services"></span>
+        <p>Services</p>
+      </div>
+      <div class="stat">
+        <span class="big_num" id="stat-charge"></span>
+        <p>Charge</p>
+      </div>
+    </div>
+    <p class="resemblance" id="profile-resemblance"></p>
+    <p class="usa-sr-only" id="stat-rankline"></p>
+    <div class="table-wrap">
+      <table class="usa-table usa-table--borderless" id="feature-table">
+        <thead>
+          <tr>
+            <th>Measure</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody id="feature-body"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+<div id="demo-cards" hidden><!--DEMOS--></div>

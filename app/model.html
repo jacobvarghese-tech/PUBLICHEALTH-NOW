@@ -1,0 +1,174 @@
+<section class="score-new" id="form-pane" aria-label="Score a row">
+  <form class="extract-panel" id="model-upload">
+    <p class="usa-label">File</p>
+    <label class="usa-label" for="attachment-npi">NPI
+      <input class="usa-input" id="attachment-npi" name="npi" inputmode="numeric" autocomplete="off" placeholder="1124725817">
+    </label>
+    <label class="usa-label" for="attachment-year">Year
+      <select class="usa-select" id="attachment-year" name="year">
+        <option value="">All years</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+        <option>2023</option>
+        <option selected>2024</option>
+      </select>
+    </label>
+    <label class="usa-label" for="attachment-file">Attachment
+      <input class="usa-file-input" id="attachment-file" name="attachment" type="file" accept=".csv,.txt,.md,.json,text/csv,text/plain">
+    </label>
+    <button type="submit" class="usa-button" id="attachment-button" aria-busy="false">Fill</button>
+    <p id="attachment-status" class="extract-status" role="status" aria-live="polite"></p>
+  </form>
+  <details class="extract-panel" id="model-extract">
+    <summary>Notes</summary>
+    <label class="usa-label" for="model-notes">Notes</label>
+    <textarea class="usa-textarea" id="model-notes" name="notes" rows="5" placeholder="Specialty, mean, sum"></textarea>
+    <button type="button" class="usa-button" id="model-extract-button" aria-busy="false">Fill</button>
+    <p id="model-extract-status" class="extract-status" role="status" aria-live="polite"></p>
+  </details>
+  <form id="score-form" class="usa-form" aria-busy="false">
+    <fieldset class="measure-group">
+      <legend>Who</legend>
+      <label class="usa-label" for="field-Specialty">Specialty
+        <input class="usa-input" id="field-Specialty" name="Specialty" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-Gender">Gender
+        <input class="usa-input" id="field-Gender" name="Gender" autocomplete="off">
+      </label>
+    </fieldset>
+    <fieldset class="measure-group">
+      <legend>Services</legend>
+      <label class="usa-label" for="field-line_srvc_cnt_mean">Mean
+        <input class="usa-input" id="field-line_srvc_cnt_mean" name="line_srvc_cnt_mean" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-line_srvc_cnt_sum">Sum
+        <input class="usa-input" id="field-line_srvc_cnt_sum" name="line_srvc_cnt_sum" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-line_srvc_cnt_median">Median
+        <input class="usa-input" id="field-line_srvc_cnt_median" name="line_srvc_cnt_median" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-line_srvc_cnt_std">Std
+        <input class="usa-input" id="field-line_srvc_cnt_std" name="line_srvc_cnt_std" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-line_srvc_cnt_min">Min
+        <input class="usa-input" id="field-line_srvc_cnt_min" name="line_srvc_cnt_min" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-line_srvc_cnt_max">Max
+        <input class="usa-input" id="field-line_srvc_cnt_max" name="line_srvc_cnt_max" inputmode="decimal" autocomplete="off">
+      </label>
+    </fieldset>
+    <fieldset class="measure-group">
+      <legend>Beneficiaries</legend>
+      <label class="usa-label" for="field-bene_unique_cnt_mean">Mean
+        <input class="usa-input" id="field-bene_unique_cnt_mean" name="bene_unique_cnt_mean" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_unique_cnt_sum">Sum
+        <input class="usa-input" id="field-bene_unique_cnt_sum" name="bene_unique_cnt_sum" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_unique_cnt_median">Median
+        <input class="usa-input" id="field-bene_unique_cnt_median" name="bene_unique_cnt_median" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_unique_cnt_std">Std
+        <input class="usa-input" id="field-bene_unique_cnt_std" name="bene_unique_cnt_std" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_unique_cnt_min">Min
+        <input class="usa-input" id="field-bene_unique_cnt_min" name="bene_unique_cnt_min" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_unique_cnt_max">Max
+        <input class="usa-input" id="field-bene_unique_cnt_max" name="bene_unique_cnt_max" inputmode="decimal" autocomplete="off">
+      </label>
+    </fieldset>
+    <fieldset class="measure-group">
+      <legend>Days</legend>
+      <label class="usa-label" for="field-bene_day_srvc_cnt_mean">Mean
+        <input class="usa-input" id="field-bene_day_srvc_cnt_mean" name="bene_day_srvc_cnt_mean" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_day_srvc_cnt_sum">Sum
+        <input class="usa-input" id="field-bene_day_srvc_cnt_sum" name="bene_day_srvc_cnt_sum" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_day_srvc_cnt_median">Median
+        <input class="usa-input" id="field-bene_day_srvc_cnt_median" name="bene_day_srvc_cnt_median" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_day_srvc_cnt_std">Std
+        <input class="usa-input" id="field-bene_day_srvc_cnt_std" name="bene_day_srvc_cnt_std" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_day_srvc_cnt_min">Min
+        <input class="usa-input" id="field-bene_day_srvc_cnt_min" name="bene_day_srvc_cnt_min" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-bene_day_srvc_cnt_max">Max
+        <input class="usa-input" id="field-bene_day_srvc_cnt_max" name="bene_day_srvc_cnt_max" inputmode="decimal" autocomplete="off">
+      </label>
+    </fieldset>
+    <fieldset class="measure-group">
+      <legend>Charge</legend>
+      <label class="usa-label" for="field-average_submitted_chrg_amt_mean">Mean
+        <input class="usa-input" id="field-average_submitted_chrg_amt_mean" name="average_submitted_chrg_amt_mean" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_submitted_chrg_amt_sum">Sum
+        <input class="usa-input" id="field-average_submitted_chrg_amt_sum" name="average_submitted_chrg_amt_sum" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_submitted_chrg_amt_median">Median
+        <input class="usa-input" id="field-average_submitted_chrg_amt_median" name="average_submitted_chrg_amt_median" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_submitted_chrg_amt_std">Std
+        <input class="usa-input" id="field-average_submitted_chrg_amt_std" name="average_submitted_chrg_amt_std" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_submitted_chrg_amt_min">Min
+        <input class="usa-input" id="field-average_submitted_chrg_amt_min" name="average_submitted_chrg_amt_min" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_submitted_chrg_amt_max">Max
+        <input class="usa-input" id="field-average_submitted_chrg_amt_max" name="average_submitted_chrg_amt_max" inputmode="decimal" autocomplete="off">
+      </label>
+    </fieldset>
+    <fieldset class="measure-group">
+      <legend>Payment</legend>
+      <label class="usa-label" for="field-average_medicare_payment_amt_mean">Mean
+        <input class="usa-input" id="field-average_medicare_payment_amt_mean" name="average_medicare_payment_amt_mean" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_medicare_payment_amt_sum">Sum
+        <input class="usa-input" id="field-average_medicare_payment_amt_sum" name="average_medicare_payment_amt_sum" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_medicare_payment_amt_median">Median
+        <input class="usa-input" id="field-average_medicare_payment_amt_median" name="average_medicare_payment_amt_median" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_medicare_payment_amt_std">Std
+        <input class="usa-input" id="field-average_medicare_payment_amt_std" name="average_medicare_payment_amt_std" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_medicare_payment_amt_min">Min
+        <input class="usa-input" id="field-average_medicare_payment_amt_min" name="average_medicare_payment_amt_min" inputmode="decimal" autocomplete="off">
+      </label>
+      <label class="usa-label" for="field-average_medicare_payment_amt_max">Max
+        <input class="usa-input" id="field-average_medicare_payment_amt_max" name="average_medicare_payment_amt_max" inputmode="decimal" autocomplete="off">
+      </label>
+    </fieldset>
+    <button class="usa-button" type="submit" id="score-button" aria-busy="false">Score</button>
+  </form>
+  <section class="profile" id="verdict" hidden aria-label="Verdict">
+    <h2 id="verdict-title">Verdict</h2>
+    <p id="verdict-meta" class="address"></p>
+    <div class="summary_stats">
+      <div class="stat">
+        <span class="big_num" id="verdict-percentile">—</span>
+        <p>Percentile</p>
+      </div>
+      <div class="stat">
+        <span class="big_num" id="verdict-score">—</span>
+        <p>Score</p>
+      </div>
+      <div class="stat">
+        <span class="big_num" id="verdict-specialty">—</span>
+        <p>Specialty</p>
+      </div>
+      <div class="stat">
+        <span class="big_num" id="verdict-services">—</span>
+        <p>Services</p>
+      </div>
+    </div>
+    <p class="resemblance" id="verdict-sentence"></p>
+    <p class="usa-sr-only" id="score-result" role="status" aria-live="polite"></p>
+  </section>
+  <div id="lookup-status" class="usa-sr-only" role="status" aria-live="polite"></div>
+</section>

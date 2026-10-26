@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Medicare Fraud Flagger</title>
+  <link rel="stylesheet" href="/static/vendor/uswds/css/uswds.min.css">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/theme.js"></script>
+  <script src="/static/vendor/uswds/js/uswds-init.min.js"></script>
+</head>
+<body>
+  <a class="usa-skipnav" href="#about">Skip to about</a>
+  <div class="wrapper">
+    <header class="top_bar">
+      <h1 class="main-header"><a href="/">Medicare Fraud Flagger</a></h1>
+      <p class="mast-links">
+        <a href="/">Flagger</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M14.5 3.1a8.8 8.8 0 1 0 6.4 13.6A8.2 8.2 0 0 1 14.5 3.1z"/>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/>
+            </g>
+          </svg>
+          <span class="theme-toggle-label">Dark mode</span>
+        </button>
+      </p>
+    </header>
+  </div>
+  <main class="prose usa-prose" id="about">
+    <h1>About this score</h1>
+    <h2>What the number means</h2>
+    <p>A high score means the billing row resembles providers who were later excluded.</p>
+    <h2>Training</h2>
+    <p>The second forest was fit on 2013 through 2022. 2023 was the selection year. 2024 was held out. The earlier training window has 1270 fraud provider-year rows. An earlier shallow model placed 11/48 of the 2024 fraud rows in the top 1% and 18/48 in the top 5%. The saved blend places 26/48 in the top 1% and 26/48 in the top 5%. @@FOREST-SHARES@@ Those 48 fraud rows are below the published external-validation floor of at least 100 events, ideally 200 or more, so those two shares are not a precise estimate of next-year capture.</p>
+    <h2>Sources and tools</h2>
+    <ul>
+      <li>Grok, in the Grok Build CLI, helped build the pipeline, the model step, and this page.</li>
+      <li>Search library: DuckDB. Name, city, and NPI lookup reads app/data/search.duckdb. The two lab rows used on the flagger are NPI 1124725817 and NPI 1639879034. DuckDB does not score a row and does not load the saved blend.</li>
+      <li>CMS files: Medicare Physician &amp; Other Practitioners by Provider and Service, 2018, 2019, 2020, 2021, 2022, 2023, and 2024, from data.cms.gov. Each year is rolled to one row per rendering NPI.</li>
+      <li>LEIE: the HHS OIG List of Excluded Individuals/Entities, the September 2026 UPDATED.csv. A provider-year is fraud only for exclusion types 1128a1, 1128a3, 1128b6, and 1128b7 when the exclusion year is after the billing year.</li>
+      <li>Saved blend: models/candidates/blend_357_247.joblib. The score is the higher of two saved ranks. Each rank is a page forest plus a second RandomForestClassifier fit on 2013 through 2022. The local Python server loads that file and scores a typed row. A static file server cannot score a row.</li>
+      <li>Map library: Leaflet. A pin uses the row's city, state, and ZIP. Clicking the pin opens that same row. The map follows its box with the browser ResizeObserver.</li>
+      <li>Page layout adapted from ProPublica Prescriber Checkup, designed by the ProPublica news apps team including Lena Groeger, Jennifer LaFleur, Charles Ornstein, and Tracy Weber. Their stylesheet and branding are not used. The layout source is the June 2019 public app at projects.propublica.org/checkup.</li>
+      <li>Interface kit: U.S. Web Design System 3.14.0, vendored at app/vendor/uswds. Public domain in the United States, CC0 worldwide. Source Sans Pro, Merriweather, and Public Sans are SIL Open Font License 1.1. The search field, buttons, alert, and table styles come from that kit. The page layout is still the flagger's own.</li>
+    </ul>
+    <p>Missing fields stay missing. The row is marked incomplete. Name, NPI, city, state, and ZIP identify the row and place the pin. They are not features.</p>
+    <p><a href="/">Back to the flagger</a></p>
+  </main>
+  <script src="/static/vendor/uswds/js/uswds.min.js"></script>
+  <script src="/static/theme.js"></script>
+</body>
+</html>

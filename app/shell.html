@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medicare Fraud Flagger</title>
+  <link rel="stylesheet" href="/static/vendor/uswds/css/uswds.min.css">
+  <link rel="stylesheet" href="/static/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/static/styles.css?v=20261025am">
+  <script src="/static/theme.js?v=20261025al"></script>
+  <script src="/static/vendor/uswds/js/uswds-init.min.js"></script>
+</head>
+<body>
+  <a class="usa-skipnav" href="#main">Skip to main</a>
+  <div class="app-shell">
+    <header class="top_bar">
+      <div class="site-lockup">
+        <img src="/static/vendor/uswds/img/us_flag_small.png" alt="">
+        <h1 class="main-header"><a href="/">Medicare Fraud Flagger</a></h1>
+      </div>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">
+        <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M14.5 3.1a8.8 8.8 0 1 0 6.4 13.6A8.2 8.2 0 0 1 14.5 3.1z"/>
+        </svg>
+        <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.1 5.1l1.6 1.6M17.3 17.3l1.6 1.6M18.9 5.1l-1.6 1.6M6.7 17.3l-1.6 1.6"/>
+          </g>
+        </svg>
+        <span class="theme-toggle-label">Dark mode</span>
+      </button>
+    </header>
+    <div class="app-body">
+      <nav class="side-nav" aria-label="Pages">
+        <a href="/" data-page="database">Database</a>
+        <a href="/model" data-page="model">Model</a>
+      </nav>
+      <main id="main" class="main-pane">
+        <!--PAGE-->
+      </main>
+    </div>
+  </div>
+  <script src="/static/vendor/leaflet/leaflet.js"></script>
+  <script src="/static/vendor/uswds/js/uswds.min.js"></script>
+  <script src="/static/app.js?v=20261025am"></script>
+  <script src="/static/theme.js?v=20261025al"></script>
+</body>
+</html>
