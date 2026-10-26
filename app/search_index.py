@@ -5,9 +5,9 @@ import pandas as pd
 LABELS = ('NPI', 'Name', 'City', 'State', 'ZIP', 'Specialty', 'Gender', 'Year')
 FROM_CSV = {'NPI': 'npi', 'Name': 'name', 'City': 'city', 'State': 'state', 'ZIP': 'zip', 'Specialty': 'provider_type', 'Gender': 'nppes_provider_gender', 'Year': 'year'}
 
-def open_db(path: 'Path') -> 'duckdb.DuckDBPyConnection':
+def open_db(path: 'Path', read_only: 'bool' = False) -> 'duckdb.DuckDBPyConnection':
     path.parent.mkdir(parents=True, exist_ok=True)
-    return duckdb.connect(str(path))
+    return duckdb.connect(str(path), read_only=read_only)
 
 def has_years(conn: 'duckdb.DuckDBPyConnection', years: 'tuple[int, ...]') -> 'bool':
     names = {row[0] for row in conn.execute('SHOW TABLES').fetchall()}

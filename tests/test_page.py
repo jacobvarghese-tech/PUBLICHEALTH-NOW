@@ -216,8 +216,8 @@ class Step7ServerTest(unittest.TestCase):
         self.assertEqual(status, 200)
         page = body.decode("utf-8")
         self.assertIn('id="browser-pane"', page)
-        for name in FEATURE_FIELDS:
-            self.assertIn(f'name="{name}"', page)
+        self.assertIn("PublicHealth NOW", page)
+        self.assertNotIn("Medicare Fraud Flagger", page)
         for year in (2018, 2019, 2020, 2021, 2022, 2023, 2024):
             self.assertIn(f"<option>{year}</option>" if year != 2024 else f"<option selected>{year}</option>", page)
         self.assertNotIn("search-examples", page)
@@ -233,14 +233,16 @@ class Step7ServerTest(unittest.TestCase):
         self.assertIn('id="verdict-sentence"', page)
         self.assertIn("Percentile", page)
         self.assertIn("Score", page)
+        self.assertIn("PublicHealth NOW", page)
+        for name in FEATURE_FIELDS:
+            self.assertIn(f'name="{name}"', page)
 
-    def test_about_names_the_disclosure(self) -> None:
+    def test_about_names_the_sources(self) -> None:
         status, body = self._get("/about.html")
         self.assertEqual(status, 200)
         page = body.decode("utf-8")
         for token in (
-            "Medicare Fraud Flagger",
-            "Grok",
+            "PublicHealth NOW",
             "1124725817",
             "1639879034",
             "CMS",

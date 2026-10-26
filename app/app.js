@@ -581,8 +581,8 @@ function renderResults(rows, query, total) {
   }
   if (crumbs) {
     crumbs.textContent = query
-      ? `Medicare Fraud Flagger » Search for ${query}`
-      : "Medicare Fraud Flagger";
+      ? `PublicHealth NOW » Search for ${query}`
+      : "PublicHealth NOW";
   }
   for (const row of rows) {
     const tr = document.createElement("tr");
