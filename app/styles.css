@@ -176,15 +176,6 @@ html[data-theme="dark"] .side-nav {
   font-weight: 700;
 }
 
-.nav-closed {
-  margin: 0 0 12px;
-  padding: 12px 16px;
-  border: 1px solid var(--line);
-  background: var(--card);
-  color: var(--ink);
-  font-size: 16px;
-}
-
 .main-pane {
   min-width: 0;
   min-height: 0;

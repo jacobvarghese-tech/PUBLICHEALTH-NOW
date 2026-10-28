@@ -330,15 +330,6 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/model":
             self._send(200, page_html("model.html", "model").encode("utf-8"), "text/html; charset=utf-8")
             return
-        closed = {
-            "/exclusions": "exclusions",
-            "/tips": "tips",
-            "/review": "review",
-            "/sources": "sources",
-        }
-        if path in closed:
-            self._send(200, page_html("closed.html", closed[path]).encode("utf-8"), "text/html; charset=utf-8")
-            return
         if path == "/about.html":
             self._send(200, about_html().encode("utf-8"), "text/html; charset=utf-8")
             return
@@ -473,14 +464,6 @@ def page_html(fragment_name: str, current: str) -> str:
         fragment = fragment.replace("<!--DEMOS-->", _demo_html())
     page = shell.replace("<!--PAGE-->", fragment)
     page = page.replace(f'data-page="{current}"', f'data-page="{current}" aria-current="page"')
-    titles = {
-        "exclusions": "Exclusions",
-        "tips": "Tips",
-        "review": "Review queue",
-        "sources": "Sources",
-    }
-    label = titles.get(current, "PublicHealth NOW")
-    page = page.replace("<!--CLOSED_TITLE-->", f"<title>{label}</title>")
     return page
 
 
